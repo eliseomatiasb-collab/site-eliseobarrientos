@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eliseo Barrientos Imóveis</title>
+<meta name="description" content="Imóveis de alto padrão em São Paulo com análise técnica de Engenheiro Civil e Corretor de Imóveis. CRECI 239602-F · CREA 2619733995">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: full-bleed hero with search overlay · curated selection · neighbourhoods · full grid · engineering credibility band · about · seller CTA · contact · footer. Editorial luxury: lots of air, thin rules, serif display, tracked labels, no card shadows. */
+:root{
+  --navy:#121212; --navy-2:#1E1E1E; --gold:#7A7A76; --gold-2:#CFCDC6; --cream:#F2F1ED;
+  --bg:#FAFAF8; --surface:#FFFFFF; --fg:#151515; --muted:#6E6E6A; --line:#E4E3DF; --line-2:#CFCEC8;
+  --band:#121212; --band-fg:#F2F1ED;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Montserrat","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F0F0F;--surface:#171717;--fg:#F1F0EC;--muted:#A3A29D;--line:#2A2A2A;--line-2:#3A3A3A;--cream:#141414;--band:#0A0A0A;--gold:#9A9994;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F0F0F;--surface:#171717;--fg:#F1F0EC;--muted:#A3A29D;--line:#2A2A2A;--line-2:#3A3A3A;--cream:#141414;--band:#0A0A0A;--gold:#9A9994;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;position:relative;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.005em}
+p{margin:0}
+.wrap{max-width:1320px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.lbl{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.rule{width:56px;height:1px;background:var(--fg);margin:1.1rem 0 1.4rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.95rem 1.7rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1px solid transparent;cursor:pointer;transition:all .25s;white-space:nowrap}
+.btn-gold{background:#fff;color:#121212}
+.btn-gold:hover{background:#121212;color:#fff;border-color:#fff}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{border-color:#fff;background:#fff;color:var(--navy)}
+.btn-dark{border-color:var(--fg);color:var(--fg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1ebe5b}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+
+/* Header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);color:#fff;background:rgba(18,18,18,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr.solid{background:rgba(10,26,48,.94);backdrop-filter:blur(12px);border-bottom-color:rgba(255,255,255,.08)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:1.5rem}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-family:var(--display);font-weight:500;font-size:1.45rem;letter-spacing:.06em;text-transform:uppercase}
+.brand small{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.25rem}
+nav.main{display:flex;gap:2.2rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+nav.main a{opacity:.85;position:relative;padding-block:.4rem}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:#fff;transition:width .3s}
+nav.main a:hover{opacity:1}nav.main a:hover::after{width:100%}
+.hdr-right{display:flex;align-items:center;gap:1.2rem}
+.hdr .btn{padding:.7rem 1.2rem;font-size:.64rem}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;width:40px;height:40px;padding:0}
+.burger span{display:block;height:1px;background:#fff;margin:6px auto;width:26px;transition:.3s}
+.mnav{position:fixed;inset:0;background:var(--navy);z-index:49;display:none;flex-direction:column;justify-content:center;padding:6rem clamp(20px,6vw,56px) 3rem;gap:1.6rem}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--display);font-size:2rem;color:#fff;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:.6rem}
+.mnav .mc{font-family:var(--body);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:0}
+@media (max-width:1000px){nav.main,.hdr-right .btn{display:none}.burger{display:block}}
+
+/* Hero */
+.hero{position:relative;min-height:min(92vh,880px);display:flex;align-items:flex-end;color:#fff;background:var(--navy);overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center;animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero .bg canvas{width:100%;height:100%;display:block}
+.hero .veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,18,18,.5) 0%,rgba(18,18,18,.2) 40%,rgba(18,18,18,.9) 100%)}
+.hero .wrap{width:100%;padding-block:9rem 3.5rem;display:grid;gap:2.6rem}
+.hero h1{font-size:clamp(2.6rem,6.2vw,5.2rem);max-width:15ch;font-weight:400}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.85)}
+.hero h1 .rot{display:inline-block;border-right:1px solid rgba(255,255,255,.8);padding-right:.06em;animation:caret 1.1s steps(1) infinite;min-width:.5ch}
+@keyframes caret{50%{border-color:transparent}}
+.hero .sub{font-weight:300;font-size:1.02rem;max-width:52ch;color:rgba(255,255,255,.82);margin-top:1.2rem;line-height:1.75}
+.search{background:rgba(255,255,255,.97);color:var(--navy);display:grid;grid-template-columns:auto 1fr 1fr 1fr auto;align-items:stretch;max-width:1000px;border:1px solid rgba(255,255,255,.4)}
+.search .seg{display:flex;border-right:1px solid #E6E1D6}
+.search .seg button{background:none;border:0;padding:0 1.3rem;font:inherit;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:#6B7280;cursor:pointer;height:64px}
+.search .seg button.on{color:var(--navy);box-shadow:inset 0 -2px 0 var(--navy)}
+.search .f{border-right:1px solid #E6E1D6;padding:.8rem 1.2rem;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.search .f label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#6B7280;font-weight:500}
+.search .f select{border:0;background:none;font:inherit;font-size:.9rem;color:var(--navy);padding:0;margin-top:.15rem;width:100%;cursor:pointer;color-scheme:light}
+.search .go{background:var(--navy);color:#fff;border:0;padding:0 2rem;font:inherit;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:.25s}
+.search .go:hover{background:#3A3A3A}
+.hero .foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);border-top:1px solid rgba(255,255,255,.18);padding-top:1.2rem}
+.hero .foot .scroll{display:flex;align-items:center;gap:.6rem}
+.hero .foot .scroll i{display:block;width:1px;height:34px;background:linear-gradient(var(--gold-2),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:900px){
+  .hero{min-height:auto}.hero .wrap{padding-block:7.5rem 2.4rem;gap:1.8rem}
+  .search{grid-template-columns:1fr 1fr}.search .seg{grid-column:1/-1;border-right:0;border-bottom:1px solid #E6E1D6}.search .seg button{flex:1;height:52px}
+  .search .f{border-right:0;border-bottom:1px solid #E6E1D6}.search .f:nth-of-type(2){border-right:1px solid #E6E1D6}.search .f.full{grid-column:1/-1}
+  .search .go{grid-column:1/-1;height:56px}
+}
+
+
+.hero .wrap{padding-block:7.5rem 3rem;gap:2.4rem}
+.htop{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:end}
+.htext{padding-bottom:1rem}
+.hcta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+.hfeat{display:grid;grid-template-columns:1fr;gap:1rem;justify-self:end;width:100%;max-width:560px}
+.hf{position:relative;display:block;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:#1E1E1E;isolation:isolate}
+.hf img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.hf:hover img{transform:scale(1.05)}
+.hf::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.35);z-index:2;pointer-events:none}
+.hf::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(18,18,18,.88));z-index:1}
+.hf-c{position:absolute;left:1.6rem;right:1.6rem;bottom:1.4rem;z-index:3;color:#fff;display:grid;gap:.15rem}
+.hf-c small{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:500}
+.hf-c b{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.1}
+.hf-c span{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.85)}
+@media (max-width:900px){.hfeat{max-width:none}.hf{aspect-ratio:3/2}}
+@media (min-width:901px){.htop{align-items:center}}
+.search{max-width:none}
+@media (max-width:900px){
+  .htop{grid-template-columns:1fr;align-items:start}
+}
+
+
+/* Glow buttons */
+.glow{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:1.05rem 2rem;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:#fff;isolation:isolate;overflow:hidden;min-width:230px}
+.glow::before{content:"";position:absolute;inset:0;padding:1px;border-radius:inherit;background:conic-gradient(from var(--a,0deg),rgba(255,255,255,0) 0 60%,#fff 78%,rgba(255,255,255,0) 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 3.2s linear infinite}
+.glow::after{content:"";position:absolute;inset:1px;background:rgba(18,18,18,.55);backdrop-filter:blur(6px);z-index:-1;transition:background .3s}
+.glow span{position:relative;background:linear-gradient(110deg,#fff 40%,#8f8f8f 50%,#fff 60%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 3.2s linear infinite}
+.glow:nth-child(2)::before,.glow:nth-child(2) span{animation-delay:-1.6s}
+.glow:hover::after{background:#fff}
+.glow:hover span{background:none;color:#121212;-webkit-text-fill-color:#121212}
+.glow:hover::before{animation-duration:1.2s}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+@keyframes sheen{0%{background-position:200% 0}100%{background-position:-20% 0}}
+@media (prefers-reduced-motion: reduce){.glow::before,.glow span{animation:none}.glow::before{background:rgba(255,255,255,.6)}.glow span{background:none;color:#fff;-webkit-text-fill-color:#fff}}
+@media (max-width:520px){.glow{min-width:0;flex:1 1 100%}}
+
+/* Ticker */
+.ticker{background:#121212;color:rgba(255,255,255,.7);overflow:hidden;white-space:nowrap;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;border-top:1px solid rgba(255,255,255,.08)}
+.ticker .track{display:inline-flex;animation:run 55s linear infinite;padding-block:.9rem}
+.ticker span{padding-inline:2.2rem;position:relative}
+.ticker span::after{content:"";position:absolute;right:-2px;top:50%;width:4px;height:4px;background:rgba(255,255,255,.5);transform:translateY(-50%) rotate(45deg)}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* Sections */
+section{padding-block:clamp(4rem,9vw,7.5rem)}
+.head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:clamp(2rem,4vw,3.5rem)}
+.head h2{font-size:clamp(2rem,4vw,3.2rem);max-width:18ch}
+.head p{max-width:46ch;color:var(--muted);font-weight:300;font-size:.95rem}
+.head .more{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--fg);padding-bottom:.3rem;white-space:nowrap}
+@media (max-width:700px){.head{grid-template-columns:1fr}}
+
+/* Selection (curated) */
+.sel{background:var(--cream)}
+.selgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.6rem}
+.selgrid .card:nth-child(1){grid-column:span 4}
+.selgrid .card:nth-child(2){grid-column:span 2}
+.selgrid .card:nth-child(n+3){grid-column:span 2}
+.selgrid .card:nth-child(1) .ph{aspect-ratio:16/9}
+@media (max-width:1000px){.selgrid{grid-template-columns:1fr 1fr}.selgrid .card{grid-column:span 1!important}.selgrid .card:nth-child(1){grid-column:span 2!important}}
+@media (max-width:640px){.selgrid{grid-template-columns:1fr}.selgrid .card:nth-child(1){grid-column:span 1!important}.selgrid .card:nth-child(1) .ph{aspect-ratio:3/2}}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 1.6rem}
+@media (max-width:1000px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.card{min-width:0;display:flex;flex-direction:column}
+.ph{position:relative;aspect-ratio:3/2;max-width:100%;overflow:hidden;background:var(--navy)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.06)}
+.ph .fb{position:absolute;inset:0;display:none;background:linear-gradient(150deg,#1E1E1E,#121212);color:#fff;padding:1.4rem;flex-direction:column;justify-content:flex-end}
+.ph.nopic .fb{display:flex}.ph.nopic img{display:none}
+.fb::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.25)}
+.fb small{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2)}
+.fb b{font-family:var(--display);font-weight:500;font-size:1.3rem;line-height:1.15;margin-top:.3rem}
+.tag{position:absolute;top:1rem;left:1rem;background:rgba(18,18,18,.85);color:#fff;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:.45rem .7rem;backdrop-filter:blur(4px)}
+.tag.own{left:auto;right:1rem;background:#fff;color:#121212}
+.cb{padding:1.1rem 0 0;display:flex;flex-direction:column;gap:.35rem;flex:1;border-bottom:1px solid var(--line);padding-bottom:1.2rem;transition:border-color .3s}
+.card:hover .cb{border-bottom-color:var(--fg)}
+.cb .loc{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;display:flex;justify-content:space-between;gap:1rem}
+.cb h3{font-size:1.45rem;font-weight:500;line-height:1.15}
+.cb .sp{font-size:.8rem;color:var(--muted);font-weight:300;display:flex;flex-wrap:wrap;gap:.2rem .5rem}
+.cb .sp span+span::before{content:"·";margin-right:.5rem;color:var(--line-2)}
+.cb .pr{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.6rem;flex-wrap:wrap}
+.cb .pr b{font-family:var(--display);font-size:1.45rem;font-weight:500;font-variant-numeric:tabular-nums}
+.cb .pr b small{font-family:var(--body);font-size:.7rem;font-weight:400;color:var(--muted);letter-spacing:.05em}
+.cb .pr em{font-style:normal;font-size:.7rem;color:var(--muted);font-weight:300}
+.cb .pr a{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--fg);display:inline-flex;align-items:center;gap:.4rem}
+.cb .pr a::after{content:"→";transition:transform .3s}
+.cb .pr a:hover::after{transform:translateX(4px)}
+
+/* Bairros */
+.bgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:1000px){.bgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+.bt{background:var(--surface);padding:2rem 1.4rem;cursor:pointer;border:0;text-align:left;font:inherit;color:var(--fg);transition:background .3s;display:flex;flex-direction:column;gap:.4rem;min-height:150px;justify-content:flex-end}
+.bt:hover{background:var(--navy);color:#fff}
+.bt b{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.1}
+.bt span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.bt i{font-style:normal;font-family:var(--display);font-size:2.4rem;color:var(--line-2);line-height:1;margin-bottom:auto;transition:color .3s}
+.bt:hover i{color:var(--gold-2)}
+
+/* Filters */
+.fbar{display:flex;gap:2rem;align-items:end;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.2rem 0;margin-bottom:2.4rem}
+.fbar .f{display:flex;flex-direction:column;min-width:150px;flex:1}
+.fbar label{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.fbar select{border:0;border-bottom:1px solid var(--line-2);background:none;font:inherit;font-size:.92rem;color:var(--fg);padding:.4rem 0;cursor:pointer}
+.fbar .chips{display:flex;gap:1.4rem;flex-wrap:wrap}
+.chip{background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--muted);cursor:pointer;padding:.5rem 0;border-bottom:1px solid transparent;transition:.25s}
+.chip.on,.chip:hover{color:var(--fg);border-bottom-color:var(--fg)}
+.count{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem;font-weight:500}
+.empty{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--muted);font-family:var(--display);font-size:1.4rem;border:1px solid var(--line)}
+.reset{background:none;border:0;font:inherit;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);cursor:pointer;padding:.5rem 0;font-weight:500}
+
+/* Credibility band */
+.band{background:var(--band);color:var(--band-fg)}
+.band .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+@media (max-width:900px){.band .wrap{grid-template-columns:1fr}}
+.band h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:#fff;font-weight:400}
+.band .q{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.35;color:rgba(255,255,255,.85);margin-top:1.6rem;max-width:32ch;font-weight:400}
+.band .sig{margin-top:1.4rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media (max-width:600px){.checks{grid-template-columns:1fr}}
+.ck{padding:1.6rem 1.6rem 1.6rem 0;border-top:1px solid rgba(255,255,255,.12)}
+.ck:nth-child(-n+2){border-top:0}
+.ck i{font-style:normal;font-family:var(--display);color:rgba(255,255,255,.45);font-size:1.6rem;display:block;line-height:1}
+.ck h3{font-size:1.25rem;color:#fff;margin-top:.5rem;font-weight:500}
+.ck p{font-size:.86rem;color:rgba(255,255,255,.7);font-weight:300;margin-top:.4rem;line-height:1.65}
+@media (min-width:901px){.band .sticky{position:sticky;top:110px}}
+
+/* About */
+.about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr}}
+.port{position:relative;aspect-ratio:4/5;max-width:100%;background:#121212;color:#fff;overflow:hidden}.port img{width:100%;height:100%;object-fit:cover;object-position:center}.port::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(18,18,18,.85))}
+.port::before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.5);z-index:2;pointer-events:none}
+.port .ini{font-family:var(--display);font-size:clamp(5rem,12vw,9rem);color:var(--gold-2);font-weight:400;line-height:1}
+.port .cap{z-index:3;position:absolute;left:2rem;right:2rem;bottom:2rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);line-height:1.9}
+.port .cap b{display:block;font-family:var(--display);font-size:1.5rem;letter-spacing:.04em;font-weight:500;color:#fff;text-transform:none}
+.about h2{font-size:clamp(2.1rem,4vw,3.2rem)}
+.about p{color:var(--muted);font-weight:300;margin-top:1.2rem;max-width:58ch}
+.about .pill{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem;margin-top:2.2rem}
+@media (max-width:480px){.about .pill{grid-template-columns:1fr}}
+.about .pill b{display:block;font-family:var(--display);font-size:1.3rem;font-weight:500;border-top:1px solid var(--fg);padding-top:.7rem}
+.about .pill span{font-size:.82rem;color:var(--muted);font-weight:300}
+
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.st{padding:2rem 1.6rem 2rem 0;border-right:1px solid var(--line)}
+.st:last-child{border-right:0}
+@media (max-width:900px){.st:nth-child(2n){border-right:0}.st{border-bottom:1px solid var(--line)}}
+.st i{font-style:normal;font-family:var(--display);color:var(--line-2);font-size:2.2rem;line-height:1;display:block}
+.st h3{font-size:1.35rem;margin-top:.8rem}
+.st p{font-size:.86rem;color:var(--muted);font-weight:300;margin-top:.5rem;line-height:1.65;max-width:30ch}
+
+/* Seller CTA */
+.sell{background:var(--cream);text-align:center}
+.sell h2{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:20ch;margin-inline:auto}
+.sell p{color:var(--muted);font-weight:300;max-width:52ch;margin:1.2rem auto 2rem}
+
+/* Contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);border-top:1px solid var(--line);padding-top:clamp(3rem,6vw,5rem)}
+@media (max-width:900px){.contact .wrap{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(2rem,4vw,3rem)}
+.contact p{color:var(--muted);font-weight:300;margin-top:1rem;max-width:44ch}
+.clist{display:grid;gap:0}
+.clist .row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.clist small{display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.clist b{font-weight:400;font-size:1.05rem;user-select:all;font-family:var(--display);font-size:1.3rem}
+.copy{background:none;border:1px solid var(--line-2);color:var(--fg);padding:.4rem .8rem;font:inherit;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.copy:hover{border-color:var(--fg)}
+
+/* Footer */
+footer{background:#0E0E0E;color:rgba(255,255,255,.7);font-size:.8rem;padding-block:3.5rem 1.6rem;font-weight:300}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
+@media (max-width:900px){.fg{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fg{grid-template-columns:1fr}}
+footer h4{color:#fff;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin:0 0 1rem}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+footer a:hover{color:#fff}
+footer .brand b{color:#fff}
+.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:2.8rem;padding-top:1.4rem;font-size:.68rem;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;letter-spacing:.04em}
+.cred{color:rgba(255,255,255,.85);letter-spacing:.14em;text-transform:uppercase;font-size:.64rem;font-weight:500;margin-top:1rem;display:block}
+
+/* Floating */
+.fab{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end}
+.wa{width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;position:relative;transition:transform .25s;box-shadow:0 12px 30px rgba(37,211,102,.4)}
+.wa:hover{transform:translateY(-3px)}
+.wa::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid #25D366;animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+.wa svg{width:28px;height:28px;fill:#fff}
+.wa .tip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:var(--surface);color:var(--fg);border:1px solid var(--line);padding:.55rem .9rem;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s}
+.wa:hover .tip{opacity:1}
+.top{width:44px;height:44px;border-radius:50%;background:#121212;color:#fff;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+.top.show{opacity:1;pointer-events:auto}
+
+/* Reveal */
+.rv{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{opacity:0;transform:translateY(28px)}
+@media (prefers-reduced-motion: reduce){
+  .rv,.rv.pre{opacity:1;transform:none;transition:none}
+  .ticker .track,.wa::before,.hero .bg img,.hero .foot .scroll i{animation:none}.hero h1 .rot{animation:none;border:0}
+  html{scroll-behavior:auto}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8S8NKWVSE6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8S8NKWVSE6');gtag('config','AW-16701036546');
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');if(!a)return;gtag('event','contato_whatsapp',{event_category:'lead',event_label:location.pathname});gtag('event','conversion',{send_to:'AW-16701036546/dHzRCJb-nPMcEIKw1ps-'});});</script>
+<link rel="canonical" href="https://eliseobarrientos.com.br/"><meta property="og:title" content="Eliseo Barrientos Imóveis"><meta property="og:description" content="Imóveis em São Paulo avaliados por um Engenheiro Civil e Corretor de Imóveis. CRECI 239602-F · CREA 2619733995"><meta property="og:image" content="https://eliseobarrientos.com.br/img/lacerda-0.jpg"></head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Eliseo Barrientos</b><small>CRECI 239602-F · CREA 2619733995</small></a>
+    <nav class="main" aria-label="Principal">
+      <a href="#imoveis" data-chip="venda">Comprar</a>
+      <a href="#imoveis" data-chip="aluguel">Alugar</a>
+      <a href="#comerciais">Comerciais</a>
+      <a href="#bairros">Bairros</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="btn btn-line" href="#anuncie">Anuncie seu imóvel</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <a href="#imoveis" data-chip="venda">Comprar</a>
+  <a href="#imoveis" data-chip="aluguel">Alugar</a>
+  <a href="#comerciais">Comerciais</a>
+  <a href="#bairros">Bairros</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#anuncie">Anuncie seu imóvel</a>
+  <a class="mc" href="https://wa.me/5511969018809" target="_blank" rel="noopener">WhatsApp (11) 96901-8809</a>
+  <a class="mc" href="#contato">CRECI 239602-F · CREA 2619733995</a>
+</div>
+
+<div id="sentinel" style="position:absolute;top:0;height:1px;width:1px"></div>
+<main id="top">
+<section class="hero">
+  <div class="bg"><canvas id="sky"></canvas></div>
+  <div class="veil"></div>
+  <div class="wrap">
+    <div class="htop">
+      <div class="htext">
+        <p class="lbl">Engenheiro Civil · Corretor de Imóveis · São Paulo</p>
+      <p class="lbl" style="margin-top:.4rem;color:rgba(255,255,255,.85)">CRECI 239602-F · CREA 2619733995</p>
+        <h1 style="margin-top:1.2rem">Imóveis escolhidos com olhar de <em class="rot" id="rot">engenheiro</em></h1>
+        <p class="sub">Uma curadoria de residências e ativos comerciais em São Paulo, cada um visitado, medido e conferido antes de chegar até você.</p>
+        <div class="hcta">
+          <a class="glow" href="#imoveis" data-chip="residencial"><span>Imóveis residenciais</span></a>
+          <a class="glow" href="#imoveis" data-chip="comercial"><span>Imóveis comerciais</span></a>
+        </div>
+      </div>
+      <div class="hfeat">
+        <a class="hf" href="/imoveis/predio-comercial-av-carlos-lacerda-475">
+          <img src="/img/lacerda-0.jpg" alt="Prédio comercial na Av. Carlos Lacerda, 475">
+          <div class="hf-c"><small>Comercial · Pirajussara</small><b>Prédio 750 m² · 22 vagas</b><span>Av. Carlos Lacerda, 475 · R$ 12.000.000</span></div>
+        </a>
+        <a class="hf" href="/imoveis/casa-av-itacira-planalto-paulista">
+          <img src="/img/itacira-hero.jpg" alt="Casa na Av. Itacira, Planalto Paulista">
+          <div class="hf-c"><small>Residencial · Planalto Paulista</small><b>Sobrado 304 m² · 4 dorms</b><span>Av. Itacira · R$ 2.599.000</span></div>
+        </a>
+      </div>
+    </div>
+    <form class="search" id="search" aria-label="Buscar imóveis">
+      <div class="seg" role="tablist"><button type="button" class="on" data-v="venda">Comprar</button><button type="button" data-v="aluguel">Alugar</button></div>
+      <div class="f"><label for="s-tipo">Tipo</label><select id="s-tipo"><option value="">Todos os tipos</option></select></div>
+      <div class="f"><label for="s-bairro">Bairro</label><select id="s-bairro"><option value="">Todos os bairros</option></select></div>
+      <div class="f full"><label for="s-q">Quartos</label><select id="s-q"><option value="">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+      <button class="go" type="submit">Buscar</button>
+    </form>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+
+<section class="sel" id="selecao">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="lbl">Seleção Eliseo Barrientos</p><h2>Captações com atendimento direto do engenheiro</h2></div>
+      <p>Imóveis que eu mesmo captei, vistoriei e precifiquei. Você fala com quem conhece cada detalhe da edificação e da documentação.</p>
+    </div>
+    <div class="selgrid" id="selgrid"></div>
+  </div>
+</section>
+
+<section id="bairros">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="lbl">Onde atuo</p><h2>Bairros</h2></div>
+      <p>Zona Sul e Oeste de São Paulo, com foco nos endereços de maior liquidez e valorização.</p>
+    </div>
+    <div class="bgrid" id="bgrid"></div>
+  </div>
+</section>
+
+<section id="imoveis" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="lbl">Carteira completa</p><h2>Todos os imóveis</h2></div>
+      <p>Valores e disponibilidade sujeitos a alteração sem aviso prévio. Imóveis de parceiros são indicados na visita.</p>
+    </div>
+    <div class="fbar">
+      <div class="chips" id="chips">
+        <button class="chip on" data-f="all">Todos</button>
+        <button class="chip" data-f="venda">Comprar</button>
+        <button class="chip" data-f="aluguel">Alugar</button>
+        <button class="chip" data-f="residencial">Residencial</button>
+        <button class="chip" data-f="comercial">Comercial</button>
+        <button class="chip" data-f="proprio">Seleção</button>
+      </div>
+      <div class="f"><label for="f-tipo">Tipo</label><select id="f-tipo"><option value="">Todos</option></select></div>
+      <div class="f"><label for="f-bairro">Bairro</label><select id="f-bairro"><option value="">Todos</option></select></div>
+      <div class="f"><label for="f-quartos">Quartos</label><select id="f-quartos"><option value="">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+      <div class="f"><label for="f-ordem">Ordenar</label><select id="f-ordem"><option value="dest">Destaques</option><option value="menor">Menor valor</option><option value="maior">Maior valor</option><option value="area">Maior área</option></select></div>
+      <button class="reset" id="reset" type="button">Limpar</button>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="band" id="comerciais">
+  <div class="wrap">
+    <div class="sticky">
+      <p class="lbl">Por que comprar com um engenheiro</p>
+      <h2 style="margin-top:1rem">Seis verificações antes de qualquer proposta</h2>
+      <p class="q">"Um imóvel é uma estrutura, um documento e um ativo. Eu analiso os três antes de recomendar um negócio."</p>
+      <p class="sig">Eliseo Barrientos · CREA 2619733995 · CRECI 239602-F</p>
+    </div>
+    <div class="checks">
+      <div class="ck rv"><i>I</i><h3>Estrutura e conservação</h3><p>Vistoria de estrutura, infiltrações e instalações. O que precisa de reparo entra no dossiê, com estimativa de custo.</p></div>
+      <div class="ck rv"><i>II</i><h3>Documentação</h3><p>Matrícula, IPTU, habite-se e débitos de condomínio conferidos antes da visita, não depois da proposta.</p></div>
+      <div class="ck rv"><i>III</i><h3>Valor de mercado</h3><p>Precificação com base em transações comparáveis e nos critérios da NBR 14653 (Norma Brasileira de Avaliação de Bens).</p></div>
+      <div class="ck rv"><i>IV</i><h3>Licenças e Bombeiros</h3><p>Nos comerciais, verificação do AVCB (Auto de Vistoria do Corpo de Bombeiros) ou CLCB (Certificado de Licença do Corpo de Bombeiros) e do uso permitido.</p></div>
+      <div class="ck rv"><i>V</i><h3>Custo de adequação</h3><p>Se você pretende reformar, recebe uma estimativa técnica de obra junto com o valor do imóvel. Decide pelo custo total.</p></div>
+      <div class="ck rv"><i>VI</i><h3>Atendimento direto</h3><p>Quem faz a análise técnica é quem visita com você, negocia e acompanha até a escritura.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="port rv"><img src="/img/eliseo-sobre.jpg" alt="Eliseo Barrientos, Engenheiro Civil e Corretor de Imóveis"><div class="cap"><b>Eliseo Barrientos</b>Engenheiro Civil · CREA 2619733995<br>Corretor de Imóveis · CRECI 239602-F</div></div>
+    <div class="rv">
+      <p class="lbl">Sobre</p>
+      <div class="rule"></div>
+      <h2>Duas leituras que toda decisão imobiliária exige</h2>
+      <p>Sou Eliseo Barrientos, Engenheiro Civil e Corretor de Imóveis em São Paulo. Reúno em um único atendimento a análise técnica da edificação e a avaliação comercial do negócio, com atuação concentrada em Itaim Bibi, Jardim Paulista, Brooklin, Vila Olímpia, Morumbi, Panamby, Pinheiros, Moema e Butantã.</p>
+      <p>Atendo compradores e investidores nacionais e internacionais em português, espanhol e inglês, e proprietários que buscam vender ou alugar com precificação fundamentada e divulgação profissional.</p>
+      <div class="pill">
+        <div><b>Técnica</b><span>Estrutura, instalações, licenças e custo de adequação</span></div>
+        <div><b>Documental</b><span>Matrícula, IPTU, habite-se e regularidade</span></div>
+        <div><b>Comercial</b><span>Precificação, negociação e divulgação</span></div>
+        <div><b>Patrimonial</b><span>Visão de longo prazo para quem investe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proc" id="processo" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="lbl">Como funciona</p><h2>Do primeiro contato à escritura</h2></div>
+      <p>Um processo claro, com o mesmo profissional do início ao fim.</p>
+    </div>
+    <div class="steps">
+      <div class="st rv"><i>01</i><h3>Conversa</h3><p>Você me conta o que procura, ou envia o imóvel que já tem em vista. Em até 24 horas úteis, devolvo uma primeira leitura técnica e comercial.</p></div>
+      <div class="st rv"><i>02</i><h3>Visita técnica</h3><p>Visitamos juntos. Eu olho estrutura, instalações, conservação e documentação, e você recebe um parecer por escrito.</p></div>
+      <div class="st rv"><i>03</i><h3>Proposta e negociação</h3><p>Preço fundamentado em comparáveis de mercado e no estado real do imóvel. Conduzo a negociação com o proprietário ou a imobiliária parceira.</p></div>
+      <div class="st rv"><i>04</i><h3>Contrato e escritura</h3><p>Acompanho a documentação, o financiamento quando houver, e a assinatura até as chaves na sua mão.</p></div>
+    </div>
+  </div>
+</section>
+<section class="sell" id="anuncie">
+  <div class="wrap rv">
+    <p class="lbl">Proprietários</p>
+    <h2 style="margin-top:1rem">Venda ou alugue com precificação fundamentada</h2>
+    <p>Avaliação técnica do imóvel, preço com base em comparáveis de mercado, fotos profissionais e divulgação nos principais portais e plataformas parceiras. Você acompanha cada contato.</p>
+    <a class="btn btn-gold" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo!%20Quero%20anunciar%20meu%20im%C3%B3vel." target="_blank" rel="noopener">Anunciar meu imóvel</a>
+  </div>
+</section>
+
+<section class="contact" id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <p class="lbl">Contato</p>
+      <div class="rule"></div>
+      <h2>Vamos analisar o seu próximo imóvel</h2>
+      <p>Envie o endereço ou o link do anúncio. Retorno em até 24 horas em dia útil com uma primeira leitura técnica e comercial.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+        <a class="btn btn-wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-dark" href="#imoveis">Ver imóveis</a>
+      </div>
+    </div>
+    <div class="clist rv">
+      <div class="row"><div><small>WhatsApp</small><b>(11) 96901-8809</b></div><button class="copy" data-copy="11969018809">Copiar</button></div>
+      <div class="row"><div><small>E-mail</small><b>eliseo@imoveisbarrientos.com.br</b></div><button class="copy" data-copy="eliseo@imoveisbarrientos.com.br">Copiar</button></div>
+      <div class="row"><div><small>Atendimento</small><b>Seg a sex, 9h às 19h · Sáb, 9h às 14h</b></div></div>
+      <div class="row"><div><small>Registros</small><b>CRECI 239602-F · CREA 2619733995</b></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="brand"><b>Eliseo Barrientos</b><small>CRECI 239602-F · CREA 2619733995</small></div>
+        <p style="margin-top:1rem;max-width:36ch">Imóveis residenciais e comerciais em São Paulo, com análise técnica de Engenheiro Civil em cada negócio.</p>
+        <span class="cred">CRECI 239602-F · CREA 2619733995</span>
+      </div>
+      <div><h4>Imóveis</h4><ul><li><a href="#imoveis" data-chip="venda">Comprar</a></li><li><a href="#imoveis" data-chip="aluguel">Alugar</a></li><li><a href="#imoveis" data-chip="comercial">Comerciais</a></li><li><a href="#selecao">Seleção</a></li></ul></div>
+      <div><h4>Bairros</h4><ul><li><a href="#bairros">Itaim Bibi</a></li><li><a href="#bairros">Morumbi e Panamby</a></li><li><a href="#bairros">Brooklin e Vila Olímpia</a></li><li><a href="#bairros">Pinheiros e Jardins</a></li></ul></div>
+      <div><h4>Redes</h4><ul>
+        <li><a href="https://www.instagram.com/eliseoengcorretor/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@eliseoeng" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.linkedin.com/in/eliseo-barrientos-8ab97b144" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/imoveiseliseobarrientos" target="_blank" rel="noopener">Facebook</a></li>
+      </ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Eliseo Barrientos · eliseobarrientos.com.br</span>
+      <span>Dados tratados conforme a LGPD (Lei 13.709/2018). Intermediações sujeitas à validação de documentação.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab">
+  <button class="top" id="totop" aria-label="Voltar ao topo">↑</button>
+  <a class="wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="tip">Fale com o Eliseo</span>
+    <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.7 4.5 1.9 6.4L4 29l7.9-1.9c1.8 1 3.9 1.5 6.1 1.5 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.7c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.7 1.1 1.2-4.4-.3-.4a9.6 9.6 0 0 1-1.6-5.4C4.8 9.5 9.8 4.9 16 4.9s11.2 4.6 11.2 10.2S22.2 24.7 16 24.7zm6.1-7.4c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.8.2-.2.3-.9 1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-1.9-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 2.9 1.2 3.4 1 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.5z"/></svg>
+  </a>
+</div>
+
+<script>
+const WA = "5511969018809";
+const IMG = "https://qbyhjbwirkidjukcbfqs.supabase.co/storage/v1/object/public/imoveis/1aa3a574-363e-4a1b-a72b-818dda5fec15/";
+// fin: venda | aluguel ; tipo ; bairro ; area m² ; q quartos ; v vagas ; preco ; proprio (captação própria) ; dest (ordem de destaque) ; img
+const P = [
+ {id:"lacerda",page:"/imoveis/predio-comercial-av-carlos-lacerda-475",t:"Prédio Comercial 750 m² · 22 vagas",b:"Pirajussara",tipo:"Comercial",fin:"venda",area:750,v:22,preco:12000000,aluguel:60000,proprio:1,dest:1,img:"96c7b6ec-7787-4cf9-8225-b8c59bef8428/b1de20aa-0243-4df9-a8a6-82e21e600d7b-grande.webp",extra:["Av. Carlos Lacerda, 475 · +50 mil veículos/dia","15 vagas cobertas + 7 descobertas · elevador · sem condomínio","CLCB do Corpo de Bombeiros válido até 2029","Documentação regularizada"]},
+ {id:"cambuci",page:"/imoveis/predio-comercial-cambuci-herminio-lemos-341",t:"Prédio Comercial 4.138 m² · +100 vagas",b:"Cambuci",tipo:"Comercial",fin:"venda",area:4138,v:100,preco:35000000,aluguel:190000,proprio:1,dest:2,img:"c0479588-ee2b-48a6-9d1a-33cadefdd1b5/23b3a190-f26f-451a-84e4-ff966dccaf67-grande.webp",extra:["Terreno 1.800 m², 4 pavimentos, elevador","Cabine primária e acessibilidade","AVCB (Auto de Vistoria do Corpo de Bombeiros)","Locação R$ 190.000/mês"]},
+ {id:"itacira",page:"/imoveis/casa-av-itacira-planalto-paulista",t:"Sobrado 304 m² · 4 dorms · 3 vagas",b:"Planalto Paulista",tipo:"Casa",fin:"venda",area:304,q:4,v:3,preco:2599000,proprio:1,dest:3,img:"31af4814-a622-4f3a-ac9f-eeb47a795909/eec5c124-af3a-4f52-b10e-75ccdeecb6f1-grande.webp"},
+ {id:"monza",t:"Apartamento 240 m² · 5 dorms · 4 vagas · Belveder Monza",b:"Morumbi",tipo:"Apartamento",fin:"venda",area:240,q:5,v:4,preco:1250000,proprio:1,dest:4,img:"0674cf1a-e32d-47e7-94a8-d16bb2e8f625/05410f6d-2ebe-4311-975f-a7db9593f441-grande.webp"},
+ {id:"ramon173",page:"/imoveis/apartamento-173m2-panamby-jose-ramon-urtiza",t:"Apartamento 173 m² · 3 suítes · 3 vagas · Singolare Morumbi",b:"Panamby",tipo:"Apartamento",fin:"venda",area:173,q:3,v:3,preco:1440000,proprio:1,dest:4.5,img:"/img/ramon-1.jpg"},
+ {id:"itajara",page:"/imoveis/apartamento-125m2-panamby-3-suites",t:"Apartamento 125 m² · 3 suítes · 3 vagas · Jardim América",b:"Panamby",tipo:"Apartamento",fin:"venda",area:125,q:3,v:3,preco:950000,proprio:1,dest:5,img:"5f13056c-fa51-4887-a805-e5dd5b2653b6/d2c6cff1-9631-4b8d-ad21-2955e622fafd-grande.webp"},
+ {id:"bartok",t:"Apartamento 160 m² · 3 suítes · 2 vagas · Bela Bartók",b:"Morumbi",tipo:"Apartamento",fin:"venda",area:160,q:3,v:2,preco:580000,proprio:1,dest:6,img:"7d859504-210c-4c37-ae2f-f41e7ced795c/487527a7-5a01-4c6f-aaac-896fb7094ae4-grande.webp"},
+ {id:"solar",page:"/imoveis/apartamento-solar-de-amigos-butanta",t:"Apartamento 66 m² · 3 dorms · 2 vagas · Solar de Amigos",b:"Butantã",tipo:"Apartamento",fin:"venda",area:66,q:3,v:2,preco:550000,proprio:1,dest:7,img:"8934eb10-dc91-4fd5-b2bd-78271f2ec098/d2d448d5-50f0-48bd-b235-2e625a46fa5e-grande.webp"},
+ {id:"vg",page:"/imoveis/apartamento-mobiliado-vila-guilherme",t:"Apartamento Mobiliado 72 m² · 3 dorms · 1 vaga",b:"Vila Guilherme",tipo:"Apartamento",fin:"venda",area:72,q:3,v:1,preco:450000,proprio:1,dest:8,img:"dfec7f95-40c0-4b5f-9bdd-a8fd59dd4951/5320e2fc-a5ed-43b2-971b-683611786d5e-grande.webp"},
+ {id:"brooklin124",t:"Apartamento 124 m² · 2 suítes · 2 vagas · Ideal Brooklin",b:"Brooklin",tipo:"Apartamento",fin:"venda",area:124,q:2,v:2,preco:2500000,aluguel:12500,dest:9,img:"3fa53450-44a7-475f-9be1-cf29a9e8c528/23f30980-9b1d-4b65-904c-1f53a6542aef-grande.webp"},
+ {id:"saojorge",t:"Apartamento 160 m² · 3 dorms · 1 vaga · São Jorge",b:"Itaim Bibi",tipo:"Apartamento",fin:"venda",area:160,q:3,v:1,preco:2200000,dest:10,img:"fe410b5b-f694-46b1-9fed-771a9004d174/771dffb6-141b-4063-b4cc-b8ad1afff4ef-grande.webp"},
+ {id:"terreno",t:"Terreno 357 m² · Zona Mista · a 500 m da Av. Paulista",b:"Bela Vista",tipo:"Terreno",fin:"venda",area:357,preco:1650000,dest:11,img:"15faa540-f16e-4a3b-98a4-a7bb8b478718/3c89aab0-c573-43b6-8c38-d8d29ba67d25-grande.webp"},
+ {id:"cotia",t:"Casa Térrea 435 m² · 3 suítes · 6 vagas · Chácaras da Represinha",b:"Cotia",tipo:"Casa",fin:"venda",area:435,q:3,v:6,preco:1340000,aluguel:8000,dest:12,img:"b3c7956e-dd57-4a6b-9e42-6a59b9432d8d/2e62fab9-940e-4199-ab6e-e583dc8f3441-grande.webp"},
+ {id:"gertrudes",t:"Casa Comercial Reformada 180 m²",b:"Vila Gertrudes",tipo:"Comercial",fin:"venda",area:180,v:1,preco:1150000,dest:13,img:"f6790ada-4cc8-4bcc-8966-786310bc618a/406eccb7-a9a6-4202-858e-b05e0499534b-grande.webp"},
+ {id:"itapua",t:"Apartamento 90 m² · 2 dorms · 1 vaga · Praia de Itapuã",b:"Itaim Bibi",tipo:"Apartamento",fin:"venda",area:90,q:2,v:1,preco:1145000,dest:14,img:"https://res.cloudinary.com/duocvmrpp/image/upload/f_auto,q_auto:good,c_limit,w_1200/v1773744495/pgn5zozft2fkcs52uezq.jpg"},
+ {id:"europa",t:"Conjunto Comercial Mobiliado 47 m² · Torre Europa",b:"Jardim Paulista",tipo:"Comercial",fin:"venda",area:47,v:1,preco:950000,dest:15,img:"0a52d331-aa5d-4041-bde0-264c080ab7ea/bd124ccf-fdc1-4d52-9dcd-53cd410bb050-grande.webp"},
+ {id:"irp",t:"Apartamento 60 m² · 2 dorms (1 suíte) · Itaim Residence Place",b:"Vila Olímpia",tipo:"Apartamento",fin:"venda",area:60,q:2,v:1,preco:950000,dest:16,img:"af20977a-61d3-4e64-816b-a2124e9388f5/80260a5f-2ebb-4258-a9bc-df93501c4612-grande.webp"},
+ {id:"virg13",t:"Apartamento Mobiliado 38 m² · 2 dorms · 13º andar · Virgílio 426",b:"Pinheiros",tipo:"Apartamento",fin:"venda",area:38,q:2,preco:575000,dest:17,img:"a36da4ab-ca41-4ba4-9355-d773f988dff7/f32f6a35-40f9-4a93-b76e-40288aabb882-grande.webp"},
+ {id:"virg10",t:"Apartamento 38 m² · 2 dorms · 10º andar · Virgílio 426",b:"Pinheiros",tipo:"Apartamento",fin:"venda",area:38,q:2,preco:565000,dest:18,img:"150c0688-3996-4ff4-887a-00a3d5ba4b99/1f64aaae-2fa6-494f-bcdc-d84b359dd89c-grande.webp"},
+ {id:"gp165b",t:"Studio 27 m² · 16º andar · Go Portugal 165B",b:"Brooklin",tipo:"Studio",fin:"venda",area:27,q:1,preco:390000,dest:19,img:"16513f6f-8b18-43fb-bd2d-b2a7a5ee9003/56a9de78-05c6-41f1-81bd-86d59fbcac32-grande.webp"},
+ {id:"gp165a",t:"Studio 27,5 m² · 16º andar · Go Portugal 165A",b:"Brooklin",tipo:"Studio",fin:"venda",area:27.5,q:1,preco:390000,dest:20,img:"0a9cf1ac-d5ed-42b5-87f6-83dd2ae5e9f4/a116218d-cea0-4b29-ad49-34f6c95e1d90-grande.webp"},
+ {id:"gp164a",t:"Studio 26 m² · 16º andar · Go Portugal 164A",b:"Brooklin",tipo:"Studio",fin:"venda",area:26,q:1,preco:390000,dest:21,img:""},
+ {id:"gp166a",t:"Studio 26 m² · 16º andar · Go Portugal 166A",b:"Brooklin",tipo:"Studio",fin:"venda",area:26,q:1,preco:390000,dest:22,img:"a07756e2-117f-4c56-8551-516bdbbdb90b/bb12fcf7-7527-444d-b8e1-b8d04dee72ab-grande.webp"},
+ {id:"itaimtower",t:"Conjunto Comercial 45 m² · Itaim Tower",b:"Itaim Bibi",tipo:"Comercial",fin:"venda",area:45,v:1,preco:370000,dest:23,img:"5ef1bb23-72ef-4f1a-a816-a120bd0773fe/ca11f5f4-fc86-4fac-afd8-b7555e63ee84-grande.webp"},
+ {id:"florear",t:"Studio 25 m² · Florear Studios",b:"Mirandópolis",tipo:"Studio",fin:"venda",area:25,q:1,preco:315000,aluguel:3000,dest:24,img:"0fc72b62-c8a9-4188-abcc-65d01baf13b8/a67770db-ead7-48a2-80be-93c8c9fb9693-grande.webp"},
+ {id:"dijon",t:"Apartamento Mobiliado 60 m² · 2 dorms · Chateaux du Dijon",b:"Itaim Bibi",tipo:"Apartamento",fin:"aluguel",area:60,q:2,v:1,preco:4300,dest:25,img:"efae07d5-25f5-4581-897a-f2958727ac72/e749097f-2f94-4cc8-a6b3-a8b877ebb891-grande.webp"},
+ {id:"manhattan",t:"Apartamento 46 m² · 1 dorm · 1 vaga · Manhattan",b:"Itaim Bibi",tipo:"Apartamento",fin:"aluguel",area:46,q:1,v:1,preco:4150,dest:26,img:"e24b3f94-53bb-4885-a4e7-382fb53cdc22/f8544083-122c-4348-a6e5-c483c4a84778-grande.webp"},
+ {id:"vn",t:"Studio Mobiliado 16 m² · VN Humberto I",b:"Vila Mariana",tipo:"Studio",fin:"aluguel",area:16,q:1,preco:4100,dest:27,img:""},
+ {id:"doit",t:"Studio 24 m² · 19º andar · Do It",b:"Vila Olímpia",tipo:"Studio",fin:"aluguel",area:24,q:1,preco:3500,dest:28,img:"4bf64b7f-cfaa-4d16-93bf-bb7e852dc578/1e8dfcc2-f282-4abc-a762-98947d85a8b9-grande.webp"},
+ {id:"paineiras",t:"Apartamento 63 m² · 2 dorms · 1 vaga · Paineiras",b:"Jabaquara",tipo:"Apartamento",fin:"aluguel",area:63,q:2,v:1,preco:2500,dest:29,img:"857f49f5-be97-4af9-818e-3ef93912a285/f6481a56-dfc8-4cd4-917b-a37237837523-grande.webp"},
+ {id:"aschermann",t:"Apartamento 188 m² · 3 dorms · 2 vagas · Prof. Carlos Aschermann",b:"Jardim Paulista",tipo:"Apartamento",fin:"venda",area:188,q:3,v:2,preco:1700000,dest:9.5,img:"https://res.cloudinary.com/duocvmrpp/image/upload/f_auto,q_auto:good,c_limit,w_1200/v1785266286/pf7l66lgjyfgpjv3u0co.jpg"},
+ {id:"omicron",t:"Apartamento 126 m² · 2 dorms · 1 vaga · Modular Ômicron",b:"Itaim Bibi",tipo:"Apartamento",fin:"venda",area:126,q:2,v:1,preco:1200000,dest:13.5,img:"https://res.cloudinary.com/duocvmrpp/image/upload/f_auto,q_auto:good,c_limit,w_1200/v1774210235/ncylkielsprdph0kzjsv.jpg"},
+ {id:"donfernando",t:"Apartamento 130 m² · 3 dorms · 1 vaga · Don Fernando",b:"Itaim Bibi",tipo:"Apartamento",fin:"aluguel",area:130,q:3,v:1,preco:6500,dest:24.5,img:"https://res.cloudinary.com/duocvmrpp/image/upload/f_auto,q_auto:good,c_limit,w_1200/v1785880350/htrhkcexskfty9o0lyv7.jpg"},
+ {id:"laje9julho",t:"Laje Corporativa 200 m² · andar inteiro · Av. Nove de Julho, 5.017",b:"Itaim Bibi",tipo:"Comercial",fin:"aluguel",area:200,v:3,preco:18000,dest:24.7,img:""},
+ {id:"moema767",t:"Edifício Comercial 1.271 m² · 25 vagas · Av. Indianópolis, 767",b:"Moema",tipo:"Comercial",fin:"aluguel",area:1271,v:25,preco:110000,dest:2.5,img:""}
+];
+
+const brl = n => "R$ " + n.toLocaleString("pt-BR");
+const waLink = p => `https://wa.me/${WA}?text=${encodeURIComponent("Olá Eliseo! Tenho interesse neste imóvel: "+p.t+" – "+p.b+".")}`;
+const fmtArea = a => String(a).replace('.',',');
+function card(p){
+  const sp=[p.area?`<span>${fmtArea(p.area)} m²</span>`:"",p.q?`<span>${p.q} ${p.q>1?"quartos":"quarto"}</span>`:"",p.v?`<span>${p.v>=100?"+100":p.v} ${p.v>1?"vagas":"vaga"}</span>`:""].join("");
+  return `<article class="card" data-id="${p.id}">
+  <a class="ph ${p.img?"":"nopic"}" href="${p.page||waLink(p)}" ${p.page?"":'target="_blank" rel="noopener"'} aria-label="${p.t}">
+    ${p.img?`<img loading="lazy" src="${p.img.startsWith("http")?p.img:IMG+p.img}" alt="${p.t} – ${p.b}" onerror="this.parentNode.classList.add('nopic')">`:""}
+    <div class="fb"><small>${p.tipo} · ${p.b}</small><b>${p.t}</b></div>
+    <span class="tag">${p.fin==="aluguel"?"Locação":"Venda"}</span>
+    ${p.proprio?'<span class="tag own">Seleção</span>':""}
+  </a>
+  <div class="cb">
+    <div class="loc"><span>${p.b} · São Paulo</span><span>${p.tipo}</span></div>
+    <h3>${p.t.split(" · ")[0]}</h3>
+    <div class="sp">${sp}</div>
+    <div class="pr"><div><b>${brl(p.preco)}${p.fin==="aluguel"?' <small>/ mês</small>':""}</b>${p.aluguel?`<br><em>ou locação ${brl(p.aluguel)}/mês</em>`:""}</div><a href="${p.page||waLink(p)}" ${p.page?"":'target="_blank" rel="noopener"'}>${p.page?"Ver imóvel":"Tenho interesse"}</a></div>
+  </div></article>`;
+}
+
+// Selection
+document.getElementById("selgrid").innerHTML=P.filter(p=>p.proprio).sort((a,b)=>a.dest-b.dest).map(card).join("");
+
+// Bairros
+const groups=[["Itaim Bibi",["Itaim Bibi"]],["Morumbi & Panamby",["Morumbi","Panamby"]],["Brooklin",["Brooklin"]],["Vila Olímpia",["Vila Olímpia"]],["Pinheiros",["Pinheiros"]],["Jardim Paulista",["Jardim Paulista","Bela Vista"]]];
+document.getElementById("bgrid").innerHTML=groups.map(([n,bs])=>{const c=P.filter(p=>bs.includes(p.b)).length;return `<button class="bt" data-b="${bs[0]}"><i>${String(c).padStart(2,"0")}</i><b>${n}</b><span>${c} ${c===1?"imóvel":"imóveis"}</span></button>`}).join("");
+
+// Filters
+const grid=document.getElementById("grid"), count=document.getElementById("count");
+const sTipo=document.getElementById("f-tipo"), sBairro=document.getElementById("f-bairro"), sQ=document.getElementById("f-quartos"), sOrd=document.getElementById("f-ordem");
+const hTipo=document.getElementById("s-tipo"), hBairro=document.getElementById("s-bairro"), hQ=document.getElementById("s-q");
+let chip="all", heroFin="venda";
+const tipos=[...new Set(P.map(p=>p.tipo))].sort(), bairros=[...new Set(P.map(p=>p.b))].sort((a,b)=>a.localeCompare(b,"pt"));
+tipos.forEach(t=>{sTipo.add(new Option(t,t));hTipo.add(new Option(t,t))});
+bairros.forEach(b=>{sBairro.add(new Option(b,b));hBairro.add(new Option(b,b))});
+function setChip(v){chip=v;document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c.dataset.f===v))}
+function render(){
+  let list=P.filter(p=>{
+    if(chip==="venda"&&p.fin!=="venda")return false;
+    if(chip==="aluguel"&&p.fin!=="aluguel")return false;
+    if(chip==="comercial"&&p.tipo!=="Comercial")return false;
+    if(chip==="residencial"&&(p.tipo==="Comercial"||p.tipo==="Terreno"))return false;
+    if(chip==="proprio"&&!p.proprio)return false;
+    if(sTipo.value&&p.tipo!==sTipo.value)return false;
+    if(sBairro.value&&p.b!==sBairro.value)return false;
+    if(sQ.value&&(!p.q||p.q<+sQ.value))return false;
+    return true;
+  });
+  const o=sOrd.value;
+  list.sort((a,b)=>o==="menor"?a.preco-b.preco:o==="maior"?b.preco-a.preco:o==="area"?(b.area||0)-(a.area||0):a.dest-b.dest);
+  grid.innerHTML=list.length?list.map(card).join(""):`<div class="empty">Nenhum imóvel com esses filtros. Fale comigo no WhatsApp e eu busco para você.</div>`;
+  count.textContent=`${list.length} ${list.length===1?"imóvel":"imóveis"} · ${list.filter(p=>p.fin==="venda").length} à venda · ${list.filter(p=>p.fin==="aluguel").length} para locação`;
+}
+document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;setChip(b.dataset.f);render();});
+[sTipo,sBairro,sQ,sOrd].forEach(s=>s.addEventListener("change",render));
+document.getElementById("reset").onclick=()=>{sTipo.value="";sBairro.value="";sQ.value="";sOrd.value="dest";setChip("all");render();};
+document.querySelectorAll("[data-chip]").forEach(a=>a.addEventListener("click",()=>{setChip(a.dataset.chip);sTipo.value="";sBairro.value="";sQ.value="";render();}));
+document.getElementById("bgrid").addEventListener("click",e=>{const b=e.target.closest(".bt");if(!b)return;setChip("all");sBairro.value=b.dataset.b;sTipo.value="";sQ.value="";render();document.getElementById("imoveis").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{heroFin=b.dataset.v;document.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b))});
+document.getElementById("search").addEventListener("submit",e=>{e.preventDefault();setChip(heroFin);sTipo.value=hTipo.value;sBairro.value=hBairro.value;sQ.value=hQ.value;render();document.getElementById("imoveis").scrollIntoView({behavior:"smooth"})});
+render();
+
+// Ticker
+const items=["Prédio comercial 750 m² · Pirajussara","Sobrado 304 m² · Planalto Paulista","Apartamento 240 m² · Morumbi","Terreno 357 m² · Bela Vista","Conjuntos comerciais · Itaim Bibi","Studios · Brooklin e Vila Olímpia","Análise técnica em todo imóvel","Documentação conferida","CRECI 239602-F · CREA 2619733995"];
+document.getElementById("ticker").innerHTML=[...items,...items].map(i=>`<span>${i}</span>`).join("");
+
+// Rotating word
+const words=["engenheiro","quem confere a matrícula","quem mede a estrutura","quem conhece o mercado"];
+const rot=document.getElementById("rot");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduce){let wi=0,ci=words[0].length,del=true;
+  (function tick(){const w=words[wi];
+    if(del){ci--;rot.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(tick,350);return}setTimeout(tick,32)}
+    else{ci++;rot.textContent=words[wi].slice(0,ci);if(ci===words[wi].length){del=true;setTimeout(tick,2600);return}setTimeout(tick,60)}
+  })();
+}
+
+// Skyline canvas (fallback behind hero photo)
+(function(){const c=document.getElementById("sky"),x=c.getContext("2d");function draw(){const W=c.width=c.offsetWidth*devicePixelRatio,H=c.height=c.offsetHeight*devicePixelRatio;
+  const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,"#1C1C1C");g.addColorStop(1,"#0E0E0E");x.fillStyle=g;x.fillRect(0,0,W,H);
+  x.strokeStyle="rgba(255,255,255,.08)";x.lineWidth=1*devicePixelRatio;let sx=0,seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+  while(sx<W){const w=(40+rnd()*90)*devicePixelRatio,h=(0.25+rnd()*0.5)*H;x.strokeRect(sx+.5,H-h,w,h);for(let fy=H-h+18*devicePixelRatio;fy<H;fy+=22*devicePixelRatio){x.beginPath();x.moveTo(sx+8*devicePixelRatio,fy);x.lineTo(sx+w-8*devicePixelRatio,fy);x.stroke()}sx+=w+(6+rnd()*18)*devicePixelRatio}
+  x.strokeStyle="rgba(255,255,255,.25)";for(let i=0;i<9;i++){x.beginPath();x.moveTo(W*.62,H*.28);x.lineTo(W*.35+i*W*.055,H*.9);x.stroke()}}
+  draw();addEventListener("resize",draw)})();
+
+// Header solid on scroll
+const hdr=document.getElementById("hdr"), top=document.getElementById("totop");
+if("IntersectionObserver"in window){
+  new IntersectionObserver(([e])=>{hdr.classList.toggle("solid",!e.isIntersecting)},{rootMargin:"-60px 0px 0px 0px"}).observe(document.getElementById("sentinel"));
+  new IntersectionObserver(([e])=>{top.classList.toggle("show",!e.isIntersecting)},{rootMargin:"-700px 0px 0px 0px"}).observe(document.getElementById("sentinel"));
+}else{hdr.classList.add("solid")}
+
+// Reveal
+if(!reduce&&"IntersectionObserver"in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll(".rv").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");io.observe(el)}});
+}
+
+// Mobile nav
+const burger=document.getElementById("burger"),mnav=document.getElementById("mnav");
+burger.onclick=()=>{const o=mnav.classList.toggle("open");burger.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":""};
+mnav.addEventListener("click",e=>{if(e.target.tagName==="A"){mnav.classList.remove("open");document.body.style.overflow=""}});
+
+// Back to top
+top.onclick=()=>document.getElementById("sentinel").scrollIntoView({behavior:reduce?"auto":"smooth"});
+
+// Copy
+document.querySelectorAll(".copy").forEach(b=>b.onclick=()=>{const v=b.dataset.copy;const done=()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar",1500)};
+  navigator.clipboard&&navigator.clipboard.writeText(v).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector("b"));const s=getSelection();s.removeAllRanges();s.addRange(r);});});
+</script>
+</body>
+</html>

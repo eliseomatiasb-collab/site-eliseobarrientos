@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prédio Comercial Cambuci 4.138 m²</title>
+<meta name="description" content="Prédio comercial de 4.138 m² em terreno de 1.800 m² no Cambuci, São Paulo: 4 pavimentos, elevador, cabine primária, AVCB, mais de 100 vagas. Venda R$ 35.000.000 ou locação R$ 190.000/mês. CRECI 239602-F · CREA 2619733995">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+/* Página de imóvel: hero com foto, barra de dados fixa, galeria, ficha técnica, parecer do engenheiro, localização, CTA. Monocromático. */
+:root{
+  --navy:#121212; --navy-2:#1E1E1E; --cream:#F2F1ED;
+  --bg:#FAFAF8; --surface:#FFFFFF; --fg:#151515; --muted:#6E6E6A; --line:#E4E3DF; --line-2:#CFCEC8;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Montserrat","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F0F0F;--surface:#171717;--fg:#F1F0EC;--muted:#A3A29D;--line:#2A2A2A;--line-2:#3A3A3A;--cream:#141414;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F0F0F;--surface:#171717;--fg:#F1F0EC;--muted:#A3A29D;--line:#2A2A2A;--line-2:#3A3A3A;--cream:#141414;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;position:relative;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1320px;margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.lbl{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.95rem 1.7rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1px solid transparent;cursor:pointer;transition:all .25s;white-space:nowrap}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1ebe5b}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}.btn-line:hover{background:#fff;color:#121212}
+.btn-dark{border-color:var(--fg);color:var(--fg)}.btn-dark:hover{background:var(--fg);color:var(--bg)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+
+/* Header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);color:#fff;background:rgba(18,18,18,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:1.5rem}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-family:var(--display);font-weight:500;font-size:1.45rem;letter-spacing:.06em;text-transform:uppercase}
+.brand small{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.25rem}
+.back{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;opacity:.85;display:inline-flex;align-items:center;gap:.5rem}
+.back:hover{opacity:1}
+
+/* Hero */
+.hero{position:relative;min-height:min(78vh,760px);display:flex;align-items:flex-end;color:#fff;background:#121212;overflow:hidden;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:kb 20s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,18,18,.45) 0%,rgba(18,18,18,.15) 35%,rgba(18,18,18,.92) 100%)}
+.hero .wrap{width:100%;padding-block:9rem 2.8rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end}
+.hero h1{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:400;max-width:16ch;margin-top:.8rem}
+.hero .addr{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.8);margin-top:.9rem}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
+.tags span{border:1px solid rgba(255,255,255,.35);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .7rem;font-weight:500}
+.pricebox{border:1px solid rgba(255,255,255,.3);padding:1.6rem;background:rgba(18,18,18,.45);backdrop-filter:blur(8px);display:grid;gap:1rem;justify-self:end;width:100%;max-width:420px}
+.pricebox small{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);display:block}
+.pricebox b{font-family:var(--display);font-size:2.2rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.pricebox .or{font-size:.85rem;font-weight:300;color:rgba(255,255,255,.8)}
+.pricebox .or b{font-size:1.3rem}
+.pricebox .cta{display:grid;gap:.6rem}
+@media (max-width:900px){.hero{min-height:auto}.hero .wrap{grid-template-columns:1fr;padding-block:7.5rem 2rem}.pricebox{max-width:none}}
+
+/* Data bar */
+.bar{background:#121212;color:#fff;border-top:1px solid rgba(255,255,255,.1)}
+.bar .wrap{display:grid;grid-template-columns:repeat(6,1fr)}
+.bar div{padding:1.2rem .8rem;border-right:1px solid rgba(255,255,255,.1);text-align:center}
+.bar div:last-child{border-right:0}
+.bar b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.bar span{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+@media (max-width:900px){.bar .wrap{grid-template-columns:repeat(3,1fr)}.bar div:nth-child(3){border-right:0}.bar div:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.1)}}
+
+/* Sections */
+section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.head{margin-bottom:clamp(1.6rem,3vw,2.6rem)}
+.head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:.5rem}
+.rule{width:56px;height:1px;background:var(--fg);margin:1.1rem 0 1.4rem}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:260px;gap:.8rem}
+.gal a{position:relative;overflow:hidden;background:#1E1E1E;display:block}
+.gal a:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gal a:hover img{transform:scale(1.05)}
+.gal .cap{position:absolute;left:0;right:0;bottom:0;padding:.9rem 1rem;background:linear-gradient(transparent,rgba(18,18,18,.85));color:#fff;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+.gal .more{display:grid;place-items:center;color:#fff;font-family:var(--display);font-size:1.3rem;background:#1E1E1E}
+@media (max-width:800px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gal a:first-child{grid-column:span 2;grid-row:span 1;height:260px}}
+
+/* Two-col */
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+.desc p{color:var(--muted);font-weight:300;margin-top:1rem;max-width:62ch}
+.desc p:first-of-type{color:var(--fg);font-family:var(--display);font-size:1.35rem;line-height:1.4;font-weight:400}
+.ficha{border-top:1px solid var(--line)}
+.ficha div{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.ficha span{color:var(--muted);font-weight:300}
+.ficha b{font-weight:500;text-align:right}
+.uses{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.uses span{border:1px solid var(--line-2);padding:.5rem .9rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+
+/* Parecer */
+.parecer{background:#121212;color:#F2F1ED}
+.parecer .two{align-items:start}
+.parecer h2{color:#fff}
+.parecer .q{font-family:var(--display);font-style:italic;font-size:1.4rem;line-height:1.35;color:rgba(255,255,255,.85);margin-top:1.4rem;max-width:34ch}
+.parecer .sig{margin-top:1.2rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.checks{display:grid;gap:0}
+.ck{padding:1.4rem 0;border-top:1px solid rgba(255,255,255,.12);display:grid;grid-template-columns:56px 1fr;gap:1rem}
+.ck i{font-style:normal;font-family:var(--display);color:rgba(255,255,255,.45);font-size:1.6rem;line-height:1}
+.ck h3{font-size:1.2rem;color:#fff;font-weight:500}
+.ck p{font-size:.86rem;color:rgba(255,255,255,.7);font-weight:300;margin-top:.35rem;line-height:1.65}
+.note{margin-top:1.6rem;font-size:.74rem;color:rgba(255,255,255,.55);font-weight:300;max-width:60ch}
+
+/* Location */
+.loc .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.6rem}
+.loc .stats div{background:var(--surface);padding:1.6rem 1.2rem}
+.loc .stats b{display:block;font-family:var(--display);font-size:2rem;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.loc .stats span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+@media (max-width:640px){.loc .stats{grid-template-columns:1fr}}
+.mapbox{aspect-ratio:16/9;max-width:100%;background:var(--cream);border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:2rem}
+.mapbox b{font-family:var(--display);font-size:1.5rem;font-weight:500;display:block}
+.mapbox span{font-size:.82rem;color:var(--muted);font-weight:300}
+.mapbox a{margin-top:1rem}
+
+/* CTA */
+.cta-band{background:var(--cream);text-align:center}
+.cta-band h2{font-size:clamp(2rem,4.2vw,3.2rem);max-width:22ch;margin-inline:auto}
+.cta-band p{color:var(--muted);font-weight:300;max-width:52ch;margin:1.2rem auto 2rem}
+
+/* Footer */
+footer{background:#0E0E0E;color:rgba(255,255,255,.7);font-size:.8rem;padding-block:2.5rem 1.6rem;font-weight:300}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.cred{color:rgba(255,255,255,.85);letter-spacing:.14em;text-transform:uppercase;font-size:.64rem;font-weight:500}
+
+/* Sticky mobile CTA + floating */
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(18,18,18,.96);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1);padding:.7rem 16px calc(.7rem + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:1rem;color:#fff}
+.stick b{font-family:var(--display);font-size:1.2rem;font-weight:500}
+.stick small{display:block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.stick .btn{padding:.7rem 1.1rem;font-size:.62rem}
+@media (max-width:900px){.stick{display:flex}body{padding-bottom:80px}}
+.fab{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:60}
+@media (max-width:900px){.fab{display:none}}
+.wa{width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;position:relative;transition:transform .25s;box-shadow:0 12px 30px rgba(37,211,102,.4)}
+.wa:hover{transform:translateY(-3px)}
+.wa::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid #25D366;animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+.rv{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{opacity:0;transform:translateY(28px)}
+@media (prefers-reduced-motion: reduce){.rv,.rv.pre{opacity:1;transform:none;transition:none}.hero img,.wa::before{animation:none}html{scroll-behavior:auto}}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8S8NKWVSE6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8S8NKWVSE6');gtag('config','AW-16701036546');
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');if(!a)return;gtag('event','contato_whatsapp',{event_category:'lead',event_label:location.pathname});gtag('event','conversion',{send_to:'AW-16701036546/dHzRCJb-nPMcEIKw1ps-'});});</script>
+<meta property="og:title" content="Prédio Comercial Cambuci 4.138 m²"><meta property="og:description" content="Prédio comercial de 4.138 m² em terreno de 1.800 m² no Cambuci, São Paulo: 4 pavimentos, elevador, cabine primária, AVCB, mais de 100 vagas. Venda R$ 35.000.000 ou locação R$ 190.000/mês. CRECI 239602-F · CREA 2619733995"><meta property="og:image" content="https://eliseobarrientos.com.br/img/cambuci-0.jpg"><meta property="og:type" content="website"><link rel="canonical" href="https://eliseobarrientos.com.br/imoveis/predio-comercial-cambuci-herminio-lemos-341"></head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/"><b>Eliseo Barrientos</b><small>CRECI 239602-F · CREA 2619733995</small></a>
+    <a class="back" href="/#imoveis">← Todos os imóveis</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding:0">
+  <img src="/img/cambuci-0.jpg" alt="Prédio comercial de 4.138 m² com mais de 100 vagas">
+  <div class="wrap">
+    <div>
+      <p class="lbl" style="color:rgba(255,255,255,.7)">Comercial · Venda ou locação · Cambuci, Centro expandido</p>
+      <h1>Prédio comercial de 4.138 m² com mais de 100 vagas</h1>
+      <p class="addr">Rua Hermínio Lemos, 341 · Cambuci · São Paulo/SP</p>
+      <div class="tags"><span>Imóvel recém-concluído</span><span>AVCB</span><span>Cabine primária</span><span>Elevador e acessibilidade</span></div>
+    </div>
+    <aside class="pricebox">
+      <div><small>Valor de venda</small><b>R$ 35.000.000</b></div>
+      <div class="or"><small>ou locação</small><b>R$ 190.000</b> / mês</div>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Tenho%20interesse%20no%20pr%C3%A9dio%20comercial%20da%20Rua%20Herm%C3%ADnio%20Lemos%2C%20341%2C%20no%20Cambuci.%20Pode%20me%20enviar%20o%20dossi%C3%AA%3F" target="_blank" rel="noopener">Solicitar dossiê pelo WhatsApp</a>
+        <a class="btn btn-line" href="#parecer">Ler o parecer do engenheiro</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="bar"><div class="wrap"><div><b>4.138</b><span>m² construídos</span></div><div><b>1.800</b><span>m² de terreno</span></div><div><b>4</b><span>pavimentos</span></div><div><b>+100</b><span>vagas</span></div><div><b>AVCB</b><span>Corpo de Bombeiros</span></div><div><b>Elevador</b><span>e acessibilidade</span></div></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="head rv"><p class="lbl">Galeria</p><h2>O imóvel</h2></div>
+    <div class="gal rv"><a href="/img/cambuci-0.jpg" target="_blank" rel="noopener"><img src="/img/cambuci-0.jpg" alt="Fachada interna com esquadrias" loading="lazy"><span class="cap">Fachada interna com esquadrias</span></a><a href="/img/cambuci-1.jpg" target="_blank" rel="noopener"><img src="/img/cambuci-1.jpg" alt="Laje ampla com estrutura metálica" loading="lazy"><span class="cap">Laje ampla com estrutura metálica</span></a><a href="/img/cambuci-2.jpg" target="_blank" rel="noopener"><img src="/img/cambuci-2.jpg" alt="Pé-direito alto" loading="lazy"><span class="cap">Pé-direito alto</span></a><a href="/img/cambuci-3.jpg" target="_blank" rel="noopener"><img src="/img/cambuci-3.jpg" alt="Laje livre" loading="lazy"><span class="cap">Laje livre</span></a><a href="/img/cambuci-4.jpg" target="_blank" rel="noopener"><img src="/img/cambuci-4.jpg" alt="Terraço" loading="lazy"><span class="cap">Terraço</span></a><a href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Quero%20ver%20todas%20as%20fotos%20e%20plantas%20deste%20im%C3%B3vel%3A%20Pr%C3%A9dio%20comercial%20de%204.138%20m%C2%B2%20com%20mais%20de%20100%20vagas." target="_blank" rel="noopener" class="more">Ver todas as fotos →</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap two">
+    <div class="desc rv">
+      <p class="lbl">Sobre o imóvel</p>
+      <div class="rule"></div>
+      <p>Um edifício comercial novo, de grande porte, em terreno de 1.800 m² no Cambuci, com lajes livres, estrutura metálica aparente e mais de 100 vagas de estacionamento.</p><p>São quatro pavimentos servidos por elevador, com acessibilidade, terraço e áreas técnicas dimensionadas para operação intensa: cabine primária de energia, sistema de combate a incêndio e AVCB (Auto de Vistoria do Corpo de Bombeiros) emitido.</p><p>As lajes com poucos pilares e pé-direito alto permitem tanto uma única operação, como escola, centro de saúde, sede corporativa ou centro de distribuição urbano, quanto a divisão em unidades para renda.</p><p>Disponível para venda ou para locação integral. IPTU informado pelo proprietário: R$ 21.000 por mês.</p>
+      <div class="uses"><span>Escola</span><span>Centro de saúde</span><span>Sede corporativa</span><span>Logística urbana</span><span>Fundo imobiliário</span><span>Renda</span></div>
+    </div>
+    <div class="rv">
+      <p class="lbl">Ficha técnica</p>
+      <div class="rule"></div>
+      <div class="ficha"><div><span>Tipo</span><b>Prédio comercial</b></div><div><span>Área construída</span><b>4.138 m²</b></div><div><span>Terreno</span><b>1.800 m²</b></div><div><span>Pavimentos</span><b>4</b></div><div><span>Vagas</span><b>Mais de 100</b></div><div><span>Elevador</span><b>Sim</b></div><div><span>Acessibilidade</span><b>Sim</b></div><div><span>Energia</span><b>Cabine primária</b></div><div><span>Corpo de Bombeiros</span><b>AVCB (Auto de Vistoria do Corpo de Bombeiros)</b></div><div><span>Estado</span><b>Recém-concluído</b></div><div><span>IPTU</span><b>R$ 21.000/mês (informado pelo proprietário)</b></div><div><span>Venda</span><b>R$ 35.000.000</b></div><div><span>Locação</span><b>R$ 190.000/mês</b></div></div>
+      <a class="btn btn-dark" style="margin-top:1.4rem" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Quero%20agendar%20uma%20visita%20ao%20pr%C3%A9dio%20comercial%20do%20Cambuci%20%28Rua%20Herm%C3%ADnio%20Lemos%2C%20341%29." target="_blank" rel="noopener">Agendar visita</a>
+    </div>
+  </div>
+</section>
+
+<section class="parecer" id="parecer">
+  <div class="wrap two">
+    <div>
+      <p class="lbl" style="color:rgba(255,255,255,.6)">Parecer do engenheiro</p>
+      <h2 style="margin-top:.8rem">O que eu verifiquei neste prédio</h2>
+      <p class="q">"Um ativo desse porte se avalia pela infraestrutura: energia, incêndio, acessos e vagas. Aqui os quatro itens estão resolvidos."</p>
+      <p class="sig">Eliseo Barrientos · Engenheiro Civil CREA 2619733995 · Corretor CRECI 239602-F</p>
+    </div>
+    <div class="checks"><div class="ck rv"><i>I</i><div><h3>Estrutura</h3><p>Estrutura metálica com lajes de grandes vãos e pé-direito alto. Flexibilidade total de layout, sem paredes estruturais internas.</p></div></div><div class="ck rv"><i>II</i><div><h3>Energia e instalações</h3><p>Cabine primária própria, que dispensa adequação de fornecimento para operações de alta demanda, como saúde, ensino e data centers de pequeno porte.</p></div></div><div class="ck rv"><i>III</i><div><h3>Incêndio e acessibilidade</h3><p>AVCB (Auto de Vistoria do Corpo de Bombeiros) emitido e sistema de combate a incêndio instalado. Elevador e rotas acessíveis.</p></div></div><div class="ck rv"><i>IV</i><div><h3>Estacionamento</h3><p>Mais de 100 vagas cobertas e descobertas no próprio terreno, dado raro em imóveis comerciais do centro expandido.</p></div></div><div class="ck rv"><i>V</i><div><h3>Documentação e uso</h3><p>Conferência de matrícula, alvarás e zoneamento antes da proposta, com parecer sobre os usos permitidos para a sua operação.</p></div></div>
+      <p class="note">Áreas e dados conforme documentação do proprietário; conferência técnica na visita e na documentação atualizada.</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc">
+  <div class="wrap two">
+    <div class="rv">
+      <p class="lbl">Localização</p>
+      <div class="rule"></div>
+      <h2>Centro expandido, acesso rápido a todas as regiões</h2>
+      <p style="color:var(--muted);font-weight:300;margin-top:1rem;max-width:56ch">O Cambuci fica entre o Centro, a Vila Mariana e o Ipiranga, com acesso às avenidas Ricardo Jafet, do Estado e ao Corredor Norte-Sul. É uma posição estratégica para operações que atendem a cidade inteira, com transporte público e logística facilitados.</p>
+      <div class="stats"><div><b>+100</b><span>vagas no terreno</span></div><div><b>4</b><span>pavimentos</span></div><div><b>1.800</b><span>m² de terreno</span></div></div>
+    </div>
+    <div class="mapbox rv">
+      <div><b>Rua Hermínio Lemos, 341</b><span>Cambuci · São Paulo/SP</span><br><a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=Rua%20Herm%C3%ADnio%20Lemos%2C%20341%2C%20Cambuci%2C%20S%C3%A3o%20Paulo" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap rv">
+    <p class="lbl">Próximo passo</p>
+    <h2 style="margin-top:1rem">Receba o dossiê técnico e agende a visita</h2>
+    <p>Envio pelo WhatsApp o portfólio completo, as plantas e a documentação do edifício. A visita técnica é acompanhada por mim.</p>
+    <a class="btn btn-wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Tenho%20interesse%20no%20pr%C3%A9dio%20comercial%20da%20Rua%20Herm%C3%ADnio%20Lemos%2C%20341%2C%20no%20Cambuci.%20Pode%20me%20enviar%20o%20dossi%C3%AA%3F" target="_blank" rel="noopener">Falar com o Eliseo</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eliseo Barrientos · eliseobarrientos.com.br</span>
+    <span class="cred">CRECI 239602-F · CREA 2619733995</span>
+    <span>Valores sujeitos a alteração sem aviso prévio. Intermediação sujeita à validação de documentação.</span>
+  </div>
+</footer>
+
+<div class="stick">
+  <div><small>Valor de venda</small><b>R$ 35.000.000</b></div>
+  <a class="btn btn-wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Tenho%20interesse%20no%20pr%C3%A9dio%20comercial%20da%20Rua%20Herm%C3%ADnio%20Lemos%2C%20341%2C%20no%20Cambuci.%20Pode%20me%20enviar%20o%20dossi%C3%AA%3F" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+<div class="fab">
+  <a class="wa" href="https://wa.me/5511969018809?text=Ol%C3%A1%20Eliseo%21%20Tenho%20interesse%20no%20pr%C3%A9dio%20comercial%20da%20Rua%20Herm%C3%ADnio%20Lemos%2C%20341%2C%20no%20Cambuci.%20Pode%20me%20enviar%20o%20dossi%C3%AA%3F" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.7 4.5 1.9 6.4L4 29l7.9-1.9c1.8 1 3.9 1.5 6.1 1.5 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.7c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.7 1.1 1.2-4.4-.3-.4a9.6 9.6 0 0 1-1.6-5.4C4.8 9.5 9.8 4.9 16 4.9s11.2 4.6 11.2 10.2S22.2 24.7 16 24.7zm6.1-7.4c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.8.2-.2.3-.9 1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-1.9-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 2.9 1.2 3.4 1 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.5z"/></svg>
+  </a>
+</div>
+
+<script>
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduce&&"IntersectionObserver"in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll(".rv").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");io.observe(el)}});
+}
+</script>
+</body>
+</html>

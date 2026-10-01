@@ -325,7 +325,9 @@ footer .brand b{color:#fff}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S8NKWVSE6"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8S8NKWVSE6');gtag('config','AW-16701036546');
-document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');if(!a)return;gtag('event','contato_whatsapp',{event_category:'lead',event_label:location.pathname});gtag('event','conversion',{send_to:'AW-16701036546/dHzRCJb-nPMcEIKw1ps-'});if(window.fbq){fbq('track','Contact',{content_name:location.pathname});}});</script>
+(function(){try{var q=new URLSearchParams(location.search);var src=q.get('gclid')?'google-ads':q.get('fbclid')?'meta-ads':q.get('utm_source');if(src){sessionStorage.setItem('eb_src',src+(q.get('utm_campaign')?'/'+q.get('utm_campaign'):''));}}catch(e){}
+document.addEventListener('DOMContentLoaded',function(){var ld=document.querySelector('script[type="application/ld+json"]');if(!ld)return;try{var j=JSON.parse(ld.textContent);if(j['@type']==='RealEstateListing'){var id=location.pathname.replace(/\.html$/,'').split('/').pop();gtag('event','view_item',{currency:'BRL',value:j.offers&&j.offers.price,items:[{item_id:id,item_name:j.name,price:j.offers&&j.offers.price}]});if(window.fbq){fbq('track','ViewContent',{content_name:j.name,content_ids:[id],content_type:'product',value:j.offers&&j.offers.price,currency:'BRL'});}}}catch(e){}});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="wa.me"]');if(!a)return;var s=null;try{s=sessionStorage.getItem('eb_src')}catch(e){}if(s&&a.href.indexOf('text=')>-1&&a.href.indexOf('origem')===-1){a.href+=encodeURIComponent(' (origem: '+s+')');}gtag('event','contato_whatsapp',{event_category:'lead',event_label:location.pathname,origem:s||'direto'});gtag('event','generate_lead',{currency:'BRL',value:0,origem:s||'direto'});gtag('event','conversion',{send_to:'AW-16701036546/dHzRCJb-nPMcEIKw1ps-'});if(window.fbq){fbq('track','Contact',{content_name:location.pathname});fbq('track','Lead',{content_name:location.pathname});}});})();</script>
 <!-- Meta Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','26363836533272857');fbq('track','PageView');</script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=26363836533272857&ev=PageView&noscript=1"/></noscript>
@@ -414,7 +416,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
     </div>
     <div class="legal">
       <span>© 2026 Eliseo Barrientos · eliseobarrientos.com.br</span>
-      <span>Dados tratados conforme a LGPD (Lei 13.709/2018). Intermediações sujeitas à validação de documentação.</span>
+      <span>Dados tratados conforme a LGPD (Lei 13.709/2018) · <a href="/politica-de-privacidade" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Política de Privacidade</a> · Intermediações sujeitas à validação de documentação.</span>
     </div>
   </div>
 </footer>

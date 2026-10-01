@@ -670,10 +670,10 @@ if(!reduce){let wi=0,ci=words[0].length,del=true;
   draw();addEventListener("resize",draw)})();
 
 // Header solid on scroll
-const hdr=document.getElementById("hdr"), top=document.getElementById("totop");
+const hdr=document.getElementById("hdr"), toTop=document.getElementById("totop");
 if("IntersectionObserver"in window){
   new IntersectionObserver(([e])=>{hdr.classList.toggle("solid",!e.isIntersecting)},{rootMargin:"-60px 0px 0px 0px"}).observe(document.getElementById("sentinel"));
-  new IntersectionObserver(([e])=>{top.classList.toggle("show",!e.isIntersecting)},{rootMargin:"-700px 0px 0px 0px"}).observe(document.getElementById("sentinel"));
+  new IntersectionObserver(([e])=>{toTop.classList.toggle("show",!e.isIntersecting)},{rootMargin:"-700px 0px 0px 0px"}).observe(document.getElementById("sentinel"));
 }else{hdr.classList.add("solid")}
 
 // Reveal
@@ -688,7 +688,7 @@ burger.onclick=()=>{const o=mnav.classList.toggle("open");burger.setAttribute("a
 mnav.addEventListener("click",e=>{if(e.target.tagName==="A"){mnav.classList.remove("open");document.body.style.overflow=""}});
 
 // Back to top
-top.onclick=()=>document.getElementById("sentinel").scrollIntoView({behavior:reduce?"auto":"smooth"});
+toTop.onclick=()=>document.getElementById("sentinel").scrollIntoView({behavior:reduce?"auto":"smooth"});
 
 // Copy
 document.querySelectorAll(".copy").forEach(b=>b.onclick=()=>{const v=b.dataset.copy;const done=()=>{b.textContent="Copiado";setTimeout(()=>b.textContent="Copiar",1500)};

@@ -6,7 +6,10 @@
 <title>Eliseo Barrientos Imóveis</title>
 <meta name="description" content="Imóveis de alto padrão em São Paulo com análise técnica de Engenheiro Civil e Corretor de Imóveis. CRECI 239602-F · CREA 2619733995">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"></noscript>
 <style>
 /* Layout: full-bleed hero with search overlay · curated selection · neighbourhoods · full grid · engineering credibility band · about · seller CTA · contact · footer. Editorial luxury: lots of air, thin rules, serif display, tracked labels, no card shadows. */
 :root{
@@ -38,7 +41,7 @@ p{margin:0}
 .btn-line:hover{border-color:#fff;background:#fff;color:var(--navy)}
 .btn-dark{border-color:var(--fg);color:var(--fg)}
 .btn-dark:hover{background:var(--fg);color:var(--bg)}
-.btn-wa{background:#25D366;color:#fff}
+.btn-wa{background:#25D366;color:#0B1F12}
 .btn-wa:hover{background:#1ebe5b}
 :focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 
@@ -196,7 +199,7 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .bt:hover{background:var(--navy);color:#fff}
 .bt b{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.1}
 .bt span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.bt i{font-style:normal;font-family:var(--display);font-size:2.4rem;color:var(--line-2);line-height:1;margin-bottom:auto;transition:color .3s}
+.bt i{font-style:normal;font-family:var(--display);font-size:2.4rem;color:var(--muted);line-height:1;margin-bottom:auto;transition:color .3s}
 .bt:hover i{color:var(--gold-2)}
 
 /* Filters */
@@ -209,13 +212,14 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .chip.on,.chip:hover{color:var(--fg);border-bottom-color:var(--fg)}
 .count{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem;font-weight:500}
 .empty{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--muted);font-family:var(--display);font-size:1.4rem;border:1px solid var(--line)}
-.reset{background:none;border:0;font:inherit;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);cursor:pointer;padding:.5rem 0;font-weight:500}
+.reset{background:none;border:0;font:inherit;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:.5rem 0;font-weight:500}
 
 /* Credibility band */
 .band{background:var(--band);color:var(--band-fg)}
 .band .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start}
 @media (max-width:900px){.band .wrap{grid-template-columns:1fr}}
 .band h2{font-size:clamp(2.2rem,4.2vw,3.4rem);color:#fff;font-weight:400}
+.band .lbl{color:rgba(255,255,255,.7)}
 .band .q{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.35;color:rgba(255,255,255,.85);margin-top:1.6rem;max-width:32ch;font-weight:400}
 .band .sig{margin-top:1.4rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:0}
@@ -276,11 +280,11 @@ footer{background:#0E0E0E;color:rgba(255,255,255,.7);font-size:.8rem;padding-blo
 .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
 @media (max-width:900px){.fg{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.fg{grid-template-columns:1fr}}
-footer h4{color:#fff;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin:0 0 1rem}
+footer h3.fh{color:#fff;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin:0 0 1rem}
 footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
 footer a:hover{color:#fff}
 footer .brand b{color:#fff}
-.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:2.8rem;padding-top:1.4rem;font-size:.68rem;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;letter-spacing:.04em}
+.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:2.8rem;padding-top:1.4rem;font-size:.68rem;color:rgba(255,255,255,.6);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;letter-spacing:.04em}
 .cred{color:rgba(255,255,255,.85);letter-spacing:.14em;text-transform:uppercase;font-size:.64rem;font-weight:500;margin-top:1rem;display:block}
 
 /* Floating */
@@ -311,7 +315,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
 <!-- Meta Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','26363836533272857');fbq('track','PageView');</script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=26363836533272857&ev=PageView&noscript=1"/></noscript>
-<link rel="canonical" href="https://eliseobarrientos.com.br/"><meta property="og:title" content="Eliseo Barrientos Imóveis"><meta property="og:description" content="Imóveis em São Paulo avaliados por um Engenheiro Civil e Corretor de Imóveis. CRECI 239602-F · CREA 2619733995"><meta property="og:image" content="https://eliseobarrientos.com.br/img/lacerda-0.jpg"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "name": "Eliseo Barrientos", "url": "https://eliseobarrientos.com.br/", "telephone": "+5511969018809", "image": "https://eliseobarrientos.com.br/img/eliseo-sobre.jpg", "address": {"@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR"}, "areaServed": "São Paulo", "identifier": [{"@type": "PropertyValue", "name": "CRECI", "value": "239602-F"}, {"@type": "PropertyValue", "name": "CREA", "value": "2619733995"}], "@id": "https://eliseobarrientos.com.br/#agent", "description": "Imóveis em São Paulo avaliados por um Engenheiro Civil e Corretor de Imóveis. Venda e locação de imóveis residenciais e comerciais de alto padrão.", "sameAs": ["https://www.instagram.com/eliseobarrientos"]}, {"@type": "Person", "@id": "https://eliseobarrientos.com.br/#eliseo", "name": "Eliseo Barrientos", "jobTitle": "Engenheiro Civil e Corretor de Imóveis", "worksFor": {"@id": "https://eliseobarrientos.com.br/#agent"}, "url": "https://eliseobarrientos.com.br/", "image": "https://eliseobarrientos.com.br/img/eliseo-sobre.jpg"}, {"@type": "WebSite", "url": "https://eliseobarrientos.com.br/", "name": "Eliseo Barrientos Imóveis", "inLanguage": "pt-BR", "publisher": {"@id": "https://eliseobarrientos.com.br/#agent"}}]}</script></head>
+<link rel="preload" as="image" href="/img/lacerda-0-720.webp" fetchpriority="high"><link rel="preload" as="image" href="/img/itacira-hero-720.webp"><link rel="canonical" href="https://eliseobarrientos.com.br/"><meta property="og:title" content="Eliseo Barrientos Imóveis"><meta property="og:description" content="Imóveis em São Paulo avaliados por um Engenheiro Civil e Corretor de Imóveis. CRECI 239602-F · CREA 2619733995"><meta property="og:image" content="https://eliseobarrientos.com.br/img/lacerda-0.jpg"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "RealEstateAgent", "name": "Eliseo Barrientos", "url": "https://eliseobarrientos.com.br/", "telephone": "+5511969018809", "image": "https://eliseobarrientos.com.br/img/eliseo-sobre.jpg", "address": {"@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR"}, "areaServed": "São Paulo", "identifier": [{"@type": "PropertyValue", "name": "CRECI", "value": "239602-F"}, {"@type": "PropertyValue", "name": "CREA", "value": "2619733995"}], "@id": "https://eliseobarrientos.com.br/#agent", "description": "Imóveis em São Paulo avaliados por um Engenheiro Civil e Corretor de Imóveis. Venda e locação de imóveis residenciais e comerciais de alto padrão.", "sameAs": ["https://www.instagram.com/eliseobarrientos"]}, {"@type": "Person", "@id": "https://eliseobarrientos.com.br/#eliseo", "name": "Eliseo Barrientos", "jobTitle": "Engenheiro Civil e Corretor de Imóveis", "worksFor": {"@id": "https://eliseobarrientos.com.br/#agent"}, "url": "https://eliseobarrientos.com.br/", "image": "https://eliseobarrientos.com.br/img/eliseo-sobre.jpg"}, {"@type": "WebSite", "url": "https://eliseobarrientos.com.br/", "name": "Eliseo Barrientos Imóveis", "inLanguage": "pt-BR", "publisher": {"@id": "https://eliseobarrientos.com.br/#agent"}}]}</script></head>
 <body>
 
 <header class="hdr" id="hdr">
@@ -360,17 +364,17 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
       </div>
       <div class="hfeat">
         <a class="hf" href="/imoveis/predio-comercial-av-carlos-lacerda-475">
-          <img src="/img/lacerda-0.jpg" alt="Prédio comercial na Av. Carlos Lacerda, 475">
+          <img src="/img/lacerda-0-720.webp" alt="Prédio comercial na Av. Carlos Lacerda, 475">
           <div class="hf-c"><small>Comercial · Pirajussara</small><b>Prédio 750 m² · 22 vagas</b><span>Av. Carlos Lacerda, 475 · R$ 12.000.000</span></div>
         </a>
         <a class="hf" href="/imoveis/casa-av-itacira-planalto-paulista">
-          <img src="/img/itacira-hero.jpg" alt="Casa na Av. Itacira, Planalto Paulista">
+          <img src="/img/itacira-hero-720.webp" alt="Casa na Av. Itacira, Planalto Paulista">
           <div class="hf-c"><small>Residencial · Planalto Paulista</small><b>Sobrado 304 m² · 4 dorms</b><span>Av. Itacira · R$ 2.599.000</span></div>
         </a>
       </div>
     </div>
     <form class="search" id="search" aria-label="Buscar imóveis">
-      <div class="seg" role="tablist"><button type="button" class="on" data-v="venda">Comprar</button><button type="button" data-v="aluguel">Alugar</button></div>
+      <div class="seg" role="group" aria-label="Finalidade"><button type="button" class="on" aria-pressed="true" data-v="venda">Comprar</button><button type="button" aria-pressed="false" data-v="aluguel">Alugar</button></div>
       <div class="f"><label for="s-tipo">Tipo</label><select id="s-tipo"><option value="">Todos os tipos</option></select></div>
       <div class="f"><label for="s-bairro">Bairro</label><select id="s-bairro"><option value="">Todos os bairros</option></select></div>
       <div class="f full"><label for="s-q">Quartos</label><select id="s-q"><option value="">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
@@ -448,7 +452,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
 
 <section class="about" id="sobre">
   <div class="wrap">
-    <div class="port rv"><img src="/img/eliseo-sobre.jpg" alt="Eliseo Barrientos, Engenheiro Civil e Corretor de Imóveis"><div class="cap"><b>Eliseo Barrientos</b>Engenheiro Civil · CREA 2619733995<br>Corretor de Imóveis · CRECI 239602-F</div></div>
+    <div class="port rv"><img src="/img/eliseo-sobre-720.webp" alt="Eliseo Barrientos, Engenheiro Civil e Corretor de Imóveis"><div class="cap"><b>Eliseo Barrientos</b>Engenheiro Civil · CREA 2619733995<br>Corretor de Imóveis · CRECI 239602-F</div></div>
     <div class="rv">
       <p class="lbl">Sobre</p>
       <div class="rule"></div>
@@ -518,9 +522,9 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="w
         <p style="margin-top:1rem;max-width:36ch">Imóveis residenciais e comerciais em São Paulo, com análise técnica de Engenheiro Civil em cada negócio.</p>
         <span class="cred">CRECI 239602-F · CREA 2619733995</span>
       </div>
-      <div><h4>Imóveis</h4><ul><li><a href="#imoveis" data-chip="venda">Comprar</a></li><li><a href="#imoveis" data-chip="aluguel">Alugar</a></li><li><a href="#imoveis" data-chip="comercial">Comerciais</a></li><li><a href="#selecao">Seleção</a></li></ul></div>
-      <div><h4>Bairros</h4><ul><li><a href="#bairros">Itaim Bibi</a></li><li><a href="#bairros">Morumbi e Panamby</a></li><li><a href="#bairros">Brooklin e Vila Olímpia</a></li><li><a href="#bairros">Pinheiros e Jardins</a></li></ul></div>
-      <div><h4>Redes</h4><ul>
+      <div><h3 class="fh">Imóveis</h3><ul><li><a href="#imoveis" data-chip="venda">Comprar</a></li><li><a href="#imoveis" data-chip="aluguel">Alugar</a></li><li><a href="#imoveis" data-chip="comercial">Comerciais</a></li><li><a href="#selecao">Seleção</a></li></ul></div>
+      <div><h3 class="fh">Bairros</h3><ul><li><a href="#bairros">Itaim Bibi</a></li><li><a href="#bairros">Morumbi e Panamby</a></li><li><a href="#bairros">Brooklin e Vila Olímpia</a></li><li><a href="#bairros">Pinheiros e Jardins</a></li></ul></div>
+      <div><h3 class="fh">Redes</h3><ul>
         <li><a href="https://www.instagram.com/eliseoengcorretor/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.youtube.com/@eliseoeng" target="_blank" rel="noopener">YouTube</a></li>
         <li><a href="https://www.linkedin.com/in/eliseo-barrientos-8ab97b144" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -551,7 +555,7 @@ const P = [
  {id:"cambuci",page:"/imoveis/predio-comercial-cambuci-herminio-lemos-341",t:"Prédio Comercial 4.138 m² · +100 vagas",b:"Cambuci",tipo:"Comercial",fin:"venda",area:4138,v:100,preco:35000000,aluguel:190000,proprio:1,dest:2,img:"c0479588-ee2b-48a6-9d1a-33cadefdd1b5/23b3a190-f26f-451a-84e4-ff966dccaf67-grande.webp",extra:["Terreno 1.800 m², 4 pavimentos, elevador","Cabine primária e acessibilidade","AVCB (Auto de Vistoria do Corpo de Bombeiros)","Locação R$ 190.000/mês"]},
  {id:"itacira",page:"/imoveis/casa-av-itacira-planalto-paulista",t:"Sobrado 304 m² · 4 dorms · 3 vagas",b:"Planalto Paulista",tipo:"Casa",fin:"venda",area:304,q:4,v:3,preco:2599000,proprio:1,dest:3,img:"31af4814-a622-4f3a-ac9f-eeb47a795909/eec5c124-af3a-4f52-b10e-75ccdeecb6f1-grande.webp"},
  {id:"monza",page:"/imoveis/apartamento-240m2-belveder-monza-morumbi",t:"Apartamento 240 m² · 5 dorms · 4 vagas · Belveder Monza",b:"Morumbi",tipo:"Apartamento",fin:"venda",area:240,q:5,v:4,preco:1250000,proprio:1,dest:4,img:"0674cf1a-e32d-47e7-94a8-d16bb2e8f625/05410f6d-2ebe-4311-975f-a7db9593f441-grande.webp"},
- {id:"ramon173",page:"/imoveis/apartamento-173m2-panamby-jose-ramon-urtiza",t:"Apartamento 173 m² · 3 suítes · 3 vagas · Singolare Morumbi",b:"Panamby",tipo:"Apartamento",fin:"venda",area:173,q:3,v:3,preco:1440000,proprio:1,dest:4.5,img:"/img/ramon-1.jpg"},
+ {id:"ramon173",page:"/imoveis/apartamento-173m2-panamby-jose-ramon-urtiza",t:"Apartamento 173 m² · 3 suítes · 3 vagas · Singolare Morumbi",b:"Panamby",tipo:"Apartamento",fin:"venda",area:173,q:3,v:3,preco:1440000,proprio:1,dest:4.5,img:"/img/ramon-1-720.webp"},
  {id:"itajara",page:"/imoveis/apartamento-125m2-panamby-3-suites",t:"Apartamento 125 m² · 3 suítes · 3 vagas · Jardim América",b:"Panamby",tipo:"Apartamento",fin:"venda",area:125,q:3,v:3,preco:950000,proprio:1,dest:5,img:"5f13056c-fa51-4887-a805-e5dd5b2653b6/d2c6cff1-9631-4b8d-ad21-2955e622fafd-grande.webp"},
  {id:"bartok",page:"/imoveis/apartamento-160m2-bela-bartok-morumbi",t:"Apartamento 160 m² · 3 suítes · 2 vagas · Bela Bartók",b:"Morumbi",tipo:"Apartamento",fin:"venda",area:160,q:3,v:2,preco:580000,proprio:1,dest:6,img:"7d859504-210c-4c37-ae2f-f41e7ced795c/487527a7-5a01-4c6f-aaac-896fb7094ae4-grande.webp"},
  {id:"solar",page:"/imoveis/apartamento-solar-de-amigos-butanta",t:"Apartamento 66 m² · 3 dorms · 2 vagas · Solar de Amigos",b:"Butantã",tipo:"Apartamento",fin:"venda",area:66,q:3,v:2,preco:550000,proprio:1,dest:7,img:"8934eb10-dc91-4fd5-b2bd-78271f2ec098/d2d448d5-50f0-48bd-b235-2e625a46fa5e-grande.webp"},
@@ -590,7 +594,7 @@ const fmtArea = a => String(a).replace('.',',');
 function card(p){
   const sp=[p.area?`<span>${fmtArea(p.area)} m²</span>`:"",p.q?`<span>${p.q} ${p.q>1?"quartos":"quarto"}</span>`:"",p.v?`<span>${p.v>=100?"+100":p.v} ${p.v>1?"vagas":"vaga"}</span>`:""].join("");
   return `<article class="card" data-id="${p.id}">
-  <a class="ph ${p.img?"":"nopic"}" href="${p.page||waLink(p)}" ${p.page?"":'target="_blank" rel="noopener"'} aria-label="${p.t}">
+  <a class="ph ${p.img?"":"nopic"}" href="${p.page||waLink(p)}" ${p.page?"":'target="_blank" rel="noopener"'} >
     ${p.img?`<img loading="lazy" src="${p.img.startsWith("http")?p.img:IMG+p.img}" alt="${p.t} – ${p.b}" onerror="this.parentNode.classList.add('nopic')">`:""}
     <div class="fb"><small>${p.tipo} · ${p.b}</small><b>${p.t}</b></div>
     <span class="tag">${p.fin==="aluguel"?"Locação":"Venda"}</span>
@@ -642,7 +646,7 @@ document.getElementById("chips").addEventListener("click",e=>{const b=e.target.c
 document.getElementById("reset").onclick=()=>{sTipo.value="";sBairro.value="";sQ.value="";sOrd.value="dest";setChip("all");render();};
 document.querySelectorAll("[data-chip]").forEach(a=>a.addEventListener("click",()=>{setChip(a.dataset.chip);sTipo.value="";sBairro.value="";sQ.value="";render();}));
 document.getElementById("bgrid").addEventListener("click",e=>{const b=e.target.closest(".bt");if(!b)return;setChip("all");sBairro.value=b.dataset.b;sTipo.value="";sQ.value="";render();document.getElementById("imoveis").scrollIntoView({behavior:"smooth"})});
-document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{heroFin=b.dataset.v;document.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b))});
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{heroFin=b.dataset.v;document.querySelectorAll(".seg button").forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-pressed",x===b)})});
 document.getElementById("search").addEventListener("submit",e=>{e.preventDefault();setChip(heroFin);sTipo.value=hTipo.value;sBairro.value=hBairro.value;sQ.value=hQ.value;render();document.getElementById("imoveis").scrollIntoView({behavior:"smooth"})});
 render();
 

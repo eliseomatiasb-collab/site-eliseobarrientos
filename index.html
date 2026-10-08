@@ -562,6 +562,7 @@ const P = [
  {id:"ramon173",page:"/imoveis/apartamento-173m2-panamby-jose-ramon-urtiza",t:"Apartamento 173 m² · 3 suítes · 3 vagas · Singolare Morumbi",b:"Panamby",tipo:"Apartamento",fin:"venda",area:173,q:3,v:3,preco:1440000,proprio:1,dest:4.5,img:"/img/ramon-1-720.webp"},
  {id:"itajara",page:"/imoveis/apartamento-125m2-panamby-3-suites",t:"Apartamento 125 m² · 3 suítes · 3 vagas · Jardim América",b:"Panamby",tipo:"Apartamento",fin:"venda",area:125,q:3,v:3,preco:950000,proprio:1,dest:5,img:"5f13056c-fa51-4887-a805-e5dd5b2653b6/d2c6cff1-9631-4b8d-ad21-2955e622fafd-grande.webp"},
  {id:"bartok",page:"/imoveis/apartamento-160m2-bela-bartok-morumbi",t:"Apartamento 160 m² · 3 suítes · 2 vagas · Bela Bartók",b:"Morumbi",tipo:"Apartamento",fin:"venda",area:160,q:3,v:2,preco:580000,proprio:1,dest:6,img:"7d859504-210c-4c37-ae2f-f41e7ced795c/487527a7-5a01-4c6f-aaac-896fb7094ae4-grande.webp"},
+ {id:"vandrade140",page:"/imoveis/apartamento-140m2-maison-saint-paul-vila-andrade",t:"Apartamento 140 m² · 3 dorms · 2 vagas · Maison Saint Paul",b:"Vila Andrade",tipo:"Apartamento",fin:"venda",area:140,q:3,v:2,preco:750000,proprio:1,dest:6.5,img:"/img/vandrade-0-720.webp"},
  {id:"solar",page:"/imoveis/apartamento-solar-de-amigos-butanta",t:"Apartamento 66 m² · 3 dorms · 2 vagas · Solar de Amigos",b:"Butantã",tipo:"Apartamento",fin:"venda",area:66,q:3,v:2,preco:550000,proprio:1,dest:7,img:"8934eb10-dc91-4fd5-b2bd-78271f2ec098/d2d448d5-50f0-48bd-b235-2e625a46fa5e-grande.webp"},
  {id:"vg",page:"/imoveis/apartamento-mobiliado-vila-guilherme",t:"Apartamento Mobiliado 72 m² · 3 dorms · 1 vaga",b:"Vila Guilherme",tipo:"Apartamento",fin:"venda",area:72,q:3,v:1,preco:450000,proprio:1,dest:8,img:"dfec7f95-40c0-4b5f-9bdd-a8fd59dd4951/5320e2fc-a5ed-43b2-971b-683611786d5e-grande.webp"},
  {id:"brooklin124",page:"/imoveis/apartamento-124m2-ideal-brooklin",t:"Apartamento 124 m² · 2 suítes · 2 vagas · Ideal Brooklin",b:"Brooklin",tipo:"Apartamento",fin:"venda",area:124,q:2,v:2,preco:2500000,aluguel:12500,dest:9,img:"3fa53450-44a7-475f-9be1-cf29a9e8c528/23f30980-9b1d-4b65-904c-1f53a6542aef-grande.webp"},
@@ -616,7 +617,7 @@ function card(p){
 document.getElementById("selgrid").innerHTML=P.filter(p=>p.proprio).sort((a,b)=>a.dest-b.dest).map(card).join("");
 
 // Bairros
-const groups=[["Itaim Bibi",["Itaim Bibi"]],["Morumbi & Panamby",["Morumbi","Panamby"]],["Brooklin",["Brooklin"]],["Vila Olímpia",["Vila Olímpia"]],["Pinheiros",["Pinheiros"]],["Jardim Paulista",["Jardim Paulista","Bela Vista"]]];
+const groups=[["Itaim Bibi",["Itaim Bibi"]],["Morumbi & Panamby",["Morumbi","Panamby","Vila Andrade"]],["Brooklin",["Brooklin"]],["Vila Olímpia",["Vila Olímpia"]],["Pinheiros",["Pinheiros"]],["Jardim Paulista",["Jardim Paulista","Bela Vista"]]];
 document.getElementById("bgrid").innerHTML=groups.map(([n,bs])=>{const c=P.filter(p=>bs.includes(p.b)).length;return `<button class="bt" data-b="${bs[0]}"><i>${String(c).padStart(2,"0")}</i><b>${n}</b><span>${c} ${c===1?"imóvel":"imóveis"}</span></button>`}).join("");
 
 // Filters
